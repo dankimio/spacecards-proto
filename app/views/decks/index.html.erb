@@ -1,0 +1,13 @@
+<h2 class="font-normal text-3xl mb-4">
+  Decks
+  <%= link_to 'New deck', new_deck_path, class: 'text-base' %>
+</h2>
+
+<% Deck.all.each do |deck| %>
+  <div class="my-3">
+    <h3 class="font-normal text-lg">
+      <%= link_to deck.name, deck, class: 'text-black no-underline' %>
+    </h3>
+    <span class="text-sm text-grey"><%= '15' %> cards</span>
+  </div>
+<% end %>

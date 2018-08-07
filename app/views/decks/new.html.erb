@@ -1,0 +1,8 @@
+<h1 class="font-normal text-3xl mb-4">New deck</h1>
+
+<%= form_with model: @deck, local: true, class: 'w-64' do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, class: 'form-control' %>
+
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
