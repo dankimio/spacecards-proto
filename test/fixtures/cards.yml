@@ -1,7 +1,4 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  user: one
   front: MyText
   back: MyText
   easiness_factor: 1.5
@@ -11,7 +8,6 @@ one:
   recalled_at: 2018-08-07 23:06:35
 
 two:
-  user: two
   front: MyText
   back: MyText
   easiness_factor: 1.5
