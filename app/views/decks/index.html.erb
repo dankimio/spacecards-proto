@@ -8,6 +8,6 @@
     <h3 class="font-normal text-lg">
       <%= link_to deck.name, deck, class: 'text-black no-underline' %>
     </h3>
-    <span class="text-sm text-grey"><%= '15' %> cards</span>
+    <span class="text-sm text-grey"><%= deck.cards_count %> <%= 'card'.pluralize(deck.cards_count) %></span>
   </div>
 <% end %>
