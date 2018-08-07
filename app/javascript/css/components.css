@@ -10,6 +10,8 @@ form label {
   }
 }
 
+/* Alerts */
+
 .alert {
   @apply .mb-5 .border .px-4 .py-3 .rounded .relative;
 }
@@ -21,6 +23,8 @@ form label {
 .alert-alert {
   @apply .bg-red-lightest .border-red-lighter .text-red-dark;
 }
+
+/* Buttons */
 
 .btn {
   @apply .font-bold .py-2 .px-4 .rounded .no-underline;
@@ -36,4 +40,28 @@ form label {
 
 .btn-primary {
   @apply .bg-indigo .text-white;
+}
+
+/* Tables */
+
+.table {
+  @apply .w-full .text-left;
+
+  & thead th {
+    @apply .border-b .border-b-2 .border-t;
+  }
+
+  & td, & th {
+    @apply .p-3;
+  }
+
+  & td {
+    @apply .border-b;
+  }
+
+  & tr:last-child {
+    & td {
+      @apply .border-b-0;
+    }
+  }
 }

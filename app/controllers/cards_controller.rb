@@ -1,5 +1,9 @@
 class CardsController < ApplicationController
-  before_action :set_deck, only: %i[new create]
+  before_action :set_deck, only: %i[index new create]
+
+  def index
+    @cards = @deck.cards
+  end
 
   def new
     @card = @deck.cards.build
