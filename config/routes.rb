@@ -6,5 +6,8 @@ Rails.application.routes.draw do
 
   resources :decks do
     resources :cards, shallow: true
+    resources :recalls, shallow: true
+
+    get 'study', to: 'recalls#new'
   end
 end

@@ -1,0 +1,22 @@
+<h1 class="font-normal text-3xl mb-4">
+  <%= link_to @deck.name, @deck, class: 'text-black no-underline' %> → Study
+</h1>
+
+<div class="" data-controller="recalls">
+  <div class="card mb-5">
+    <div class="card-front py-4 border-b">
+      Front
+    </div>
+    <div class="py-4" data-target="recalls.back">
+    </div>
+  </div>
+
+  <a href="#" class="btn btn-outline-primary" data-target="recalls.showResponseButton" data-action="recalls#showResponse">Show answer</a>
+
+  <div class="hidden" data-target="recalls.responseButtons">
+    <a href="#" class="btn btn-outline-primary">1 – Bad</a>
+    <a href="#" class="btn btn-outline-primary">2 – Okay</a>
+    <a href="#" class="btn btn-outline-primary">3 – Good</a>
+    <a href="#" class="btn btn-outline-primary">4 – Excellent</a>
+  </div>
+</div>
