@@ -50,7 +50,7 @@ form label {
 }
 
 .btn-outline-primary {
-  @apply .border-indigo .text-indigo;
+  @apply .bg-white .border-indigo .text-indigo;
 
   &:hover {
     @apply .bg-indigo .text-white;

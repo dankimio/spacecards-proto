@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   root 'decks#index'
 
-  resources :decks do
-    resources :cards, shallow: true
-    resources :recalls, shallow: true
+  resources :decks, except: %i[edit update destroy] do
+    resources :cards, only: %i[index new create], shallow: true do
+      resources :recalls, only: %i[create]
+    end
 
     get 'study', to: 'recalls#new'
   end

@@ -13,10 +13,10 @@
 
   <a href="#" class="btn btn-outline-primary" data-target="recalls.showResponseButton" data-action="recalls#showResponse">Show answer</a>
 
-  <div class="hidden" data-target="recalls.responseButtons">
-    <a href="#" class="btn btn-outline-primary">1 – Bad</a>
-    <a href="#" class="btn btn-outline-primary">2 – Okay</a>
-    <a href="#" class="btn btn-outline-primary">3 – Good</a>
-    <a href="#" class="btn btn-outline-primary">4 – Excellent</a>
+  <div class="hidden" id="response-buttons" data-target="recalls.responseButtons">
+    <%= button_to '1 – Bad', card_recalls_path(@card), params: { quality: 1 }, class: 'btn btn-outline-primary' %>
+    <%= button_to '2 – Okay', card_recalls_path(@card), params: { quality: 2 }, class: 'btn btn-outline-primary' %>
+    <%= button_to '3 – Good', card_recalls_path(@card), params: { quality: 3 }, class: 'btn btn-outline-primary' %>
+    <%= button_to '4 – Excellent', card_recalls_path(@card), params: { quality: 4 }, class: 'btn btn-outline-primary' %>
   </div>
 </div>
