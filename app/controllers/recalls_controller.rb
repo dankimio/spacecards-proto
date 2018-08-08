@@ -14,11 +14,8 @@ class RecallsController < ApplicationController
   end
 
   def create
-    if @card.update(due_on: Date.tomorrow)
-      head :ok
-    else
-      head 422
-    end
+    @card.recall(card_params[:quality].to_i)
+    head :ok
   end
 
   private
@@ -29,5 +26,9 @@ class RecallsController < ApplicationController
 
   def set_card
     @card = Card.find(params.dig(:card, :id))
+  end
+
+  def card_params
+    params.require(:card).permit(:quality)
   end
 end

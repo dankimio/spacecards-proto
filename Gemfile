@@ -21,6 +21,9 @@ gem 'jbuilder', '~> 2.5'
 # Auth
 gem 'devise', '~> 4.4'
 
+# Spaced repetition algorithm
+gem 'repetition', '~> 2.0'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
