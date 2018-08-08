@@ -1,1 +1,1 @@
-json.extract! @card, :id, :front, :back
+json.array! @cards, partial: 'cards/card', as: :card

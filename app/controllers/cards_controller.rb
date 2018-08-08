@@ -5,6 +5,10 @@ class CardsController < ApplicationController
     @cards = @deck.cards
   end
 
+  def show
+    @card = Card.find(params[:id])
+  end
+
   def new
     @card = @deck.cards.build
   end

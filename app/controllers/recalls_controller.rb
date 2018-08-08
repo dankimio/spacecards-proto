@@ -3,11 +3,10 @@ class RecallsController < ApplicationController
   before_action :set_card, only: %i[create]
 
   def index
-    @card = @deck.cards.first
   end
 
   def new
-    @card = @deck.cards.first
+    @cards = @deck.cards.due
 
     respond_to do |format|
       format.json
@@ -15,7 +14,11 @@ class RecallsController < ApplicationController
   end
 
   def create
-    @card.update(due_on: Date.tomorrow)
+    if @card.update(due_on: Date.tomorrow)
+      head :ok
+    else
+      head 422
+    end
   end
 
   private
@@ -25,6 +28,6 @@ class RecallsController < ApplicationController
   end
 
   def set_card
-    @card = Card.find(params[:card_id])
+    @card = Card.find(params.dig(:card, :id))
   end
 end
