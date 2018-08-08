@@ -1,7 +1,7 @@
 class Card < ApplicationRecord
   belongs_to :deck, counter_cache: true
 
-  scope :due, -> { where('due_on <= ?', Date.today) }
+  scope :due, -> { where('due_on <= ? OR due_on IS NULL', Date.today) }
 
   def recall(quality)
     flashcard = Repetition::Flashcard.new(
