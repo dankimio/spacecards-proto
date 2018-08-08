@@ -1,13 +1,21 @@
 class RecallsController < ApplicationController
-  before_action :set_deck, only: %i[new]
+  before_action :set_deck, only: %i[index new]
   before_action :set_card, only: %i[create]
 
-  def new
+  def index
     @card = @deck.cards.first
   end
 
+  def new
+    @card = @deck.cards.first
+
+    respond_to do |format|
+      format.json
+    end
+  end
+
   def create
-    redirect_to deck_study_url(@card.deck)
+    @card.update(due_on: Date.tomorrow)
   end
 
   private

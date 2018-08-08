@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   root 'decks#index'
 
   resources :decks, except: %i[edit update destroy] do
+    resources :recalls, only: %i[new]
+
     resources :cards, only: %i[index new create], shallow: true do
       resources :recalls, only: %i[create]
     end
 
-    get 'study', to: 'recalls#new'
+    get 'study', to: 'recalls#index'
   end
 end
