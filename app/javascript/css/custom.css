@@ -14,6 +14,10 @@ a {
   }
 }
 
+.stripe {
+  background: linear-gradient(to right, #7886d7, #5661b3);
+}
+
 #response-buttons .button_to {
   display: inline-block;
 }
