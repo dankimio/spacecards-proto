@@ -31,10 +31,11 @@ form label {
 /* Buttons */
 
 .btn {
-  @apply .inline-block .py-2 .px-4 .rounded .no-underline .border;
+  @apply .inline-block .py-2 .px-4 .rounded .no-underline .border .shadow;
 
   &:hover {
-    transition: var(--transition-base)
+    transition: var(--transition-base);
+    transform: translateY(-1px);
   }
   &:focus {
     @apply .outline-none .shadow-outline;
