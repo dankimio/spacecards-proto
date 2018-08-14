@@ -15,26 +15,30 @@ export default class extends Controller {
 
     // Display the front of the card
     this.frontTarget.textContent = this.currentCard.front
-    // Populate the back of the card and hide it
-    this.backTarget.textContent = ''
-    // Show 'Show Answer' and show response buttons
-    this.showResponseButtonTarget.style.display = 'inline-block'
-    this.responseButtonsTarget.style.display = 'none'
+    this.hideResponse()
   }
 
   showResponse() {
-    // Display response
+    this.backTarget.classList.add('active')
     this.backTarget.textContent = this.currentCard.back
 
-    // Hide 'Show Response' and show response buttons
     this.showResponseButtonTarget.style.display = 'none'
     this.responseButtonsTarget.style.display = 'block'
   }
 
+  hideResponse() {
+    this.backTarget.classList.remove('active')
+    this.backTarget.textContent = ''
+
+    this.showResponseButtonTarget.style.display = 'inline-block'
+    this.responseButtonsTarget.style.display = 'none'
+  }
+
   // Hide everything and show 'No cards left' message
   hide() {
-    this.frontTarget.style.display = 'none'
-    this.backTarget.textContent = 'No cards left!'
+    this.frontTarget.textContent = 'No cards left!'
+    this.backTarget.style.display = 'none'
+
     this.showResponseButtonTarget.style.display = 'none'
     this.responseButtonsTarget.style.display = 'none'
   }

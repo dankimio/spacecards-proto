@@ -18,6 +18,23 @@ a {
   background: linear-gradient(to right, #7886d7, #5661b3);
 }
 
+.card {
+  @apply .bg-grey-lightest .rounded;
+
+  & .card-front {
+    @apply .p-5;
+  }
+
+  & .card-back {
+    transition: var(--transition-base);
+
+    &.active {
+      transition: var(--transition-base);
+      @apply .border-t .border-grey-lighter .py-5 .mx-5;
+    }
+  }
+}
+
 #response-buttons .button_to {
   display: inline-block;
 }
