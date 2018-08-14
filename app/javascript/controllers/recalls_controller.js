@@ -9,12 +9,7 @@ export default class extends Controller {
 
   showCard() {
     if (!this.currentCard) {
-      // Hide everything
-      this.frontTarget.style.display = 'none'
-      this.backTarget.textContent = 'No cards left!'
-      this.showResponseButtonTarget.style.display = 'none'
-      this.responseButtonsTarget.style.display = 'none'
-
+      this.hide()
       return
     }
 
@@ -36,6 +31,14 @@ export default class extends Controller {
     this.responseButtonsTarget.style.display = 'block'
   }
 
+  // Hide everything and show 'No cards left' message
+  hide() {
+    this.frontTarget.style.display = 'none'
+    this.backTarget.textContent = 'No cards left!'
+    this.showResponseButtonTarget.style.display = 'none'
+    this.responseButtonsTarget.style.display = 'none'
+  }
+
   recall(event) {
     let quality = event.target.dataset.quality
 
@@ -52,9 +55,10 @@ export default class extends Controller {
       if (response.ok) {
         this.cards = this.cards.filter(item => item !== this.currentCard)
         this.currentCard = this.cards[0]
-        this.showCard()
 
-        if (!this.currentCard) {
+        if (this.currentCard) {
+          this.showCard()
+        } else {
           this.load()
         }
       }
@@ -68,7 +72,12 @@ export default class extends Controller {
       .then(json => {
         this.cards = json
         this.currentCard = this.cards[0]
-        this.showCard()
+
+        if (this.currentCard) {
+          this.showCard()
+        } else {
+          this.hide()
+        }
       })
   }
 }
