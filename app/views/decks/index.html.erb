@@ -6,7 +6,7 @@
 <% Deck.all.each do |deck| %>
   <div class="my-3">
     <h3 class="font-normal text-lg">
-      <%= link_to deck.name, deck, class: 'text-black no-underline' %>
+      <%= link_to deck.name, deck %>
     </h3>
     <span class="text-sm text-grey"><%= deck.cards_count %> <%= 'card'.pluralize(deck.cards_count) %></span>
   </div>

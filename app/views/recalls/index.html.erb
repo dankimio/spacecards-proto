@@ -1,5 +1,5 @@
 <h1 class="font-normal text-3xl mb-4">
-  <%= link_to @deck.name, @deck, class: 'text-black no-underline' %> → Study
+  <%= link_to @deck.name, @deck %> → Study
 </h1>
 
 <div class="" data-controller="recalls" data-recalls-get-url="<%= new_deck_recall_path(@deck) %>" data-recalls-post-url="<%= recalls_path %>">
