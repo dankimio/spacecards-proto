@@ -35,6 +35,10 @@ a {
   }
 }
 
-#response-buttons .button_to {
-  display: inline-block;
+#response-buttons .btn {
+  display: block;
+
+  @media (min-width: 576px) {
+    display: inline-block;
+  }
 }
