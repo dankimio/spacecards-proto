@@ -52,6 +52,7 @@ export default class extends Controller {
 
     fetch(this.data.get('post-url'), {
       body: formData,
+      credentials: 'same-origin',
       method: 'POST',
       headers: { 'X-CSRF-Token': getMetaValue('csrf-token') }
     })
@@ -71,7 +72,7 @@ export default class extends Controller {
 
   // Load cards from the server
   load() {
-    fetch(this.data.get('get-url'))
+    fetch(this.data.get('get-url'), { credentials: 'same-origin' })
       .then(response => response.json())
       .then(json => {
         this.cards = json
