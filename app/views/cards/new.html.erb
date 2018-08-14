@@ -2,12 +2,12 @@
   <%= link_to @deck.name, @deck %> → New card
 </h1>
 
-<%= form_with model: @card, url: deck_cards_path(@deck), local: true, class: 'w-64' do |f| %>
+<%= form_with model: @card, url: deck_cards_path(@deck), local: true, class: 'w-full md:w-2/3 lg:w-1/2' do |f| %>
   <%= f.label :front %>
-  <%= f.text_area :front, required: true, class: 'form-control' %>
+  <%= f.text_area :front, required: true, placeholder: true, class: 'form-control' %>
 
   <%= f.label :back %>
-  <%= f.text_area :back, required: true, class: 'form-control' %>
+  <%= f.text_area :back, required: true, placeholder: true, class: 'form-control' %>
 
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>

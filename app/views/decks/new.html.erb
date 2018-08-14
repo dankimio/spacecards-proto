@@ -2,7 +2,7 @@
 
 <%= form_with model: @deck, local: true, class: 'w-64' do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name, required: true, class: 'form-control' %>
+  <%= f.text_field :name, required: true, placeholder: true, class: 'form-control' %>
 
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
