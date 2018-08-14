@@ -20,9 +20,11 @@ export default class extends Controller {
 
     // Display the front of the card
     this.frontTarget.textContent = this.currentCard.front
-
     // Populate the back of the card and hide it
     this.backTarget.textContent = ''
+    // Show 'Show Answer' and show response buttons
+    this.showResponseButtonTarget.style.display = 'inline-block'
+    this.responseButtonsTarget.style.display = 'none'
   }
 
   showResponse() {
@@ -51,6 +53,10 @@ export default class extends Controller {
         this.cards = this.cards.filter(item => item !== this.currentCard)
         this.currentCard = this.cards[0]
         this.showCard()
+
+        if (!this.currentCard) {
+          this.load()
+        }
       }
     })
   }
@@ -67,6 +73,7 @@ export default class extends Controller {
   }
 }
 
+// Send CSRF token
 function getMetaValue(name) {
   const element = document.head.querySelector(`meta[name="${name}"]`)
   return element.getAttribute('content')

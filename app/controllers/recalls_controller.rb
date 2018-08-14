@@ -29,6 +29,6 @@ class RecallsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:quality)
+    params.require(:card).permit(:id, :quality)
   end
 end
