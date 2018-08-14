@@ -15,7 +15,7 @@ class DecksController < ApplicationController
     @deck = Deck.new(deck_params.merge(user: User.first))
 
     if @deck.save
-      redirect_to @deck
+      redirect_to @deck, notice: 'Deck was created successfully'
     else
       render :new
     end
