@@ -10,11 +10,15 @@
   </div>
 
   <%= form_with model: card, class: 'hidden flex-col md:flex-row md:w-2/3', data: { target: 'edit-card.form' } do |f| %>
-    <%= f.text_field :front, required: true, placeholder: true, class: 'md:w-1/2 bg-transparent pb-2 border-b-2 focus:border-indigo mr-5' %>
+    <%= f.text_field :front,
+                     required: true, placeholder: true,
+                     class: 'md:w-1/2 bg-transparent pb-2 border-b-2 focus:border-indigo mr-5 mb-4 md:mb-0' %>
 
-    <%= f.text_field :back, required: true, placeholder: true, class: 'md:w-1/2 bg-transparent pb-2 border-b-2 focus:border-indigo mr-5' %>
+    <%= f.text_field :back,
+                     required: true, placeholder: true,
+                     class: 'md:w-1/2 bg-transparent pb-2 border-b-2 focus:border-indigo mr-5 mb-4 md:mb-0' %>
 
-    <%= f.submit 'Save', class: 'btn btn-primary' %>
+    <%= f.submit 'Save', class: 'btn btn-primary mb-4 md:mb-0' %>
   <% end %>
 
   <div class="md:w-1/3 md:text-right">
