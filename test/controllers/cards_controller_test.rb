@@ -26,8 +26,8 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update card' do
-    patch card_url(@card), params: { card: { front: @card.front, back: @card.back } }
-    assert_redirected_to deck_cards_url(@card.deck)
+    patch card_url(@card, format: :js), params: { card: { front: @card.front, back: @card.back } }
+    assert_response :success
   end
 
   test 'should destroy card' do
