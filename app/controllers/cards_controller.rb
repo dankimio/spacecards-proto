@@ -14,6 +14,8 @@ class CardsController < ApplicationController
 
     if @card.save
       redirect_to new_deck_card_url(@deck), notice: 'Card was added successfully'
+    else
+      render :new
     end
   end
 
