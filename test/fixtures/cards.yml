@@ -1,16 +1,17 @@
-one:
+card:
+  deck: deck
   front: MyText
   back: MyText
-  easiness_factor: 1.5
+  easiness_factor: 2.5
   repetitions: 1
   interval: 1
-  due_on: 2018-08-07
-  recalled_at: 2018-08-07 23:06:35
+  due_on: <%= 1.day.ago %>
+  recalled_at: <%= 1.day.ago %>
 
 two:
   front: MyText
   back: MyText
-  easiness_factor: 1.5
+  easiness_factor: 2.5
   repetitions: 1
   interval: 1
   due_on: 2018-08-07

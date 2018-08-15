@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class CardTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @card = cards(:card)
+  end
+
+  test 'valid' do
+    assert @card.valid?
+  end
 end

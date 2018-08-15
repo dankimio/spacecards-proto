@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class DeckTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @deck = decks(:deck)
+  end
+
+  test 'valid' do
+    assert @deck.valid?
+  end
 end
