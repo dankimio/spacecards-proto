@@ -61,6 +61,22 @@ form label {
   }
 }
 
+.btn-danger {
+  @apply .bg-red-light .border-red-light .text-white;
+
+  &:hover {
+    @apply .bg-red .text-grey-lighter;
+  }
+}
+
+.btn-outline-danger {
+  @apply .bg-white .border-red-light .text-red-light;
+
+  &:hover {
+    @apply .bg-red-light .text-white;
+  }
+}
+
 /* Tables */
 
 .table {

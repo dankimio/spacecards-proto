@@ -19,17 +19,19 @@
     <div class="stripe h-2">
     </div>
 
-    <div class="container flex justify-between items-center py-6">
-      <div class="text-4xl">
+    <div class="container flex flex-col sm:flex-row sm:justify-between sm:items-center py-6">
+      <div class="text-4xl mb-3 sm:mb-0">
         <%= link_to root_path do %>
           <%= image_tag 'logo.png', class: 'h-12' %>
         <% end %>
       </div>
       <div class="">
         <% if user_signed_in? %>
-          <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+          <%= link_to 'Upgrade', '#', class: 'btn btn-primary' %>
+          <%= link_to 'Settings', edit_user_registration_path, class: 'ml-4' %>
+          <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'ml-4' %>
         <% else %>
-          <%= link_to 'Log in', new_user_session_path %>
+          <%= link_to 'Log in', new_user_session_path, class: 'ml-4' %>
         <% end %>
       </div>
     </div>
