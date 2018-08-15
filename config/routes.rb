@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'decks#index'
 
-  resources :decks, except: %i[edit update destroy] do
+  resources :decks do
     resources :recalls, only: %i[new]
 
     resources :cards, except: %i[edit], shallow: true

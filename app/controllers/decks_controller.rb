@@ -1,10 +1,11 @@
 class DecksController < ApplicationController
+  before_action :set_deck, only: %i[show edit update destroy]
+
   def index
     @decks = current_user.decks
   end
 
   def show
-    @deck = current_user.decks.find(params[:id])
   end
 
   def new
@@ -21,7 +22,27 @@ class DecksController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @deck.update(deck_params)
+      redirect_to @deck, notice: 'Deck was updated successfully'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @deck.destroy
+    redirect_to decks_path, notice: 'Deck was successfully deleted'
+  end
+
   private
+
+  def set_deck
+    @deck = current_user.decks.find(params[:id])
+  end
 
   def deck_params
     params.require(:deck).permit(:name)

@@ -1,6 +1,19 @@
-<div class="mb-4 py-4 px-5 bg-grey-lightest rounded lg:w-2/3 xl:w-1/2">
-  <div class="text-lg mb-2">
-    <%= link_to deck.name, deck %>
+<div class="flex justify-between mb-4 py-4 px-5 bg-grey-lightest rounded lg:w-2/3 xl:w-1/2">
+  <div class="">
+    <div class="text-lg mb-2">
+      <%= link_to deck.name, deck %>
+    </div>
+    <span class="text-sm text-grey"><%= deck.cards_count %> <%= 'card'.pluralize(deck.cards_count) %></span>
   </div>
-  <span class="text-sm text-grey"><%= deck.cards_count %> <%= 'card'.pluralize(deck.cards_count) %></span>
+  <div class="text-right">
+    <%= link_to edit_deck_path(deck), class: 'mr-5 text-grey-dark hover:text-indigo-dark' do %>
+      <i class="material-icons mr-1" style="font-size:.925rem">edit</i>
+      Edit
+    <% end %>
+
+    <%= link_to deck_path(deck), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-grey-dark hover:text-red-dark' do %>
+      <i class="material-icons mr-1" style="font-size:.925rem">delete</i>
+      Delete
+    <% end %>
+  </div>
 </div>

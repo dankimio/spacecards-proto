@@ -30,19 +30,16 @@ class DecksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get edit' do
-    skip
     get edit_deck_url(@deck)
     assert_response :success
   end
 
   test 'should update deck' do
-    skip
     patch deck_url(@deck), params: { deck: { name: @deck.name } }
     assert_redirected_to deck_url(@deck)
   end
 
   test 'should destroy deck' do
-    skip
     assert_difference('Deck.count', -1) do
       delete deck_url(@deck)
     end
