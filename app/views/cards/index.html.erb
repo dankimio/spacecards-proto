@@ -2,17 +2,4 @@
   <%= link_to @deck.name, @deck %> → Cards
 </h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Front</th>
-      <th>Back</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @cards.each do |card| %>
-      <%= render 'cards/card', card: card %>
-    <% end %>
-  </tbody>
-</table>
+<%= render @cards %>

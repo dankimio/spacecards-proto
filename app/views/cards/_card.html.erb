@@ -1,8 +1,21 @@
-<tr>
-  <td><%= card.front %></td>
-  <td><%= card.back %></td>
-  <td>
-    <%= link_to 'Edit', '#', class: 'mr-4' %>
-    <%= link_to 'Delete', card_path(card), class: 'text-red' %>
-  </td>
-</tr>
+<div class="flex items-center py-5 px-6 bg-grey-lightest rounded mb-4 hover:bg-grey-lighter">
+  <div class="w-2/5">
+    <%= card.front %>
+  </div>
+
+  <div class="w-2/5">
+    <%= card.back %>
+  </div>
+
+  <div class="w-1/5 text-right">
+    <%= link_to '#', class: 'mr-5 text-grey-dark hover:text-indigo-dark' do %>
+      <i class="material-icons mr-1" style="font-size:.925rem">edit</i>
+      Edit
+    <% end %>
+
+    <%= link_to card_path(card), class: 'text-grey-dark hover:text-red-dark' do %>
+      <i class="material-icons mr-1" style="font-size:.925rem">delete</i>
+      Delete
+    <% end %>
+  </div>
+</div>
