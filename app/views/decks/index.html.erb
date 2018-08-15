@@ -3,7 +3,7 @@
   <%= link_to 'New deck', new_deck_path, class: 'text-base ml-1' %>
 </h2>
 
-<% Deck.all.each do |deck| %>
+<% @decks.each do |deck| %>
   <div class="mb-4 py-4 px-5 bg-grey-lightest rounded lg:w-2/3 xl:w-1/2">
     <div class="text-lg mb-2">
       <%= link_to deck.name, deck %>

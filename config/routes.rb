@@ -11,6 +11,5 @@ Rails.application.routes.draw do
 
     get 'study', to: 'recalls#index'
   end
-  resources :cards, only: %i[show]
   resources :recalls, only: %i[create]
 end

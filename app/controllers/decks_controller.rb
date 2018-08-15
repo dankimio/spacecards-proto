@@ -1,18 +1,18 @@
 class DecksController < ApplicationController
   def index
-    @decks = Deck.all
+    @decks = current_user.decks
   end
 
   def show
-    @deck = Deck.find(params[:id])
+    @deck = current_user.decks.find(params[:id])
   end
 
   def new
-    @deck = Deck.new
+    @deck = current_user.decks.build
   end
 
   def create
-    @deck = Deck.new(deck_params.merge(user: User.first))
+    @deck = current_user.decks.build(deck_params.merge(user: User.first))
 
     if @deck.save
       redirect_to @deck, notice: 'Deck was created successfully'
