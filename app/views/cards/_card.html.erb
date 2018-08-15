@@ -13,7 +13,7 @@
       Edit
     <% end %>
 
-    <%= link_to card_path(card), class: 'text-grey-dark hover:text-red-dark' do %>
+    <%= link_to card_path(card), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-grey-dark hover:text-red-dark' do %>
       <i class="material-icons mr-1" style="font-size:.925rem">delete</i>
       Delete
     <% end %>
