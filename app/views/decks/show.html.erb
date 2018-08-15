@@ -4,5 +4,10 @@
   <%= link_to 'Add cards', new_deck_card_path(@deck), class: 'text-base ml-1' %>
 </h1>
 
-<%= link_to 'Browse', deck_cards_path(@deck), class: 'btn btn-outline-primary' %>
-<%= link_to 'Study', deck_study_path(@deck), class: 'btn btn-primary' %>
+<%= link_to deck_cards_path(@deck), class: 'btn btn-outline-primary' do %>
+  <i class="material-icons mr-1" style="font-size:.85rem">list</i> Browse
+<% end %>
+
+<%= link_to deck_study_path(@deck), class: 'btn btn-primary' do %>
+  <i class="material-icons mr-1" style="font-size:.85rem">timelapse</i> Study
+<% end %>

@@ -29,7 +29,9 @@
       </div>
       <div class="">
         <% if user_signed_in? %>
-          <%= link_to 'Upgrade', '#', class: 'btn btn-primary' %>
+          <%= link_to '#', class: 'btn btn-primary' do %>
+            <i class="material-icons mr-1 " style="font-size:.85rem">star</i> Upgrade
+          <% end %>
           <%= link_to 'Settings', edit_user_registration_path, class: 'ml-4' %>
           <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'ml-4' %>
         <% else %>
