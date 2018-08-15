@@ -1,0 +1,8 @@
+<tr>
+  <td><%= card.front %></td>
+  <td><%= card.back %></td>
+  <td>
+    <%= link_to 'Edit', '#', class: 'mr-4' %>
+    <%= link_to 'Delete', card_path(card), class: 'text-red' %>
+  </td>
+</tr>

@@ -7,14 +7,12 @@
     <tr>
       <th>Front</th>
       <th>Back</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% @cards.each do |card| %>
-      <tr>
-        <td><%= card.front %></td>
-        <td><%= card.back %></td>
-      </tr>
+      <%= render 'cards/card', card: card %>
     <% end %>
   </tbody>
 </table>
