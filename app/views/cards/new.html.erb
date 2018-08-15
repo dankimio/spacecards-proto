@@ -3,11 +3,15 @@
 </h1>
 
 <%= form_with model: @card, url: deck_cards_path(@deck), local: true, class: 'w-full md:w-2/3 lg:w-1/2' do |f| %>
-  <%= f.label :front %>
-  <%= f.text_area :front, required: true, placeholder: true, class: 'form-control' %>
+  <div class="field">
+    <%= f.label :front %>
+    <%= f.text_area :front, required: true, placeholder: true, class: 'form-control' %>
+  </div>
 
-  <%= f.label :back %>
-  <%= f.text_area :back, required: true, placeholder: true, class: 'form-control' %>
+  <div class="field">
+    <%= f.label :back %>
+    <%= f.text_area :back, required: true, placeholder: true, class: 'form-control' %>
+  </div>
 
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
