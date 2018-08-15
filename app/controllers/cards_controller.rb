@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_deck, only: %i[index new create]
+  before_action :set_card, only: %i[update destroy]
 
   def index
     @cards = @deck.cards
@@ -19,10 +20,27 @@ class CardsController < ApplicationController
     end
   end
 
+  def update
+    if @card.update(card_params)
+      redirect_to deck_cards_url(@card.deck), notice: 'Card was updated successfully'
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @card.destroy
+    redirect_to deck_cards_url(@card.deck), notice: 'Card was deleted successfully'
+  end
+
   private
 
   def set_deck
     @deck = Deck.find(params[:deck_id])
+  end
+
+  def set_card
+    @card = Card.find(params[:id])
   end
 
   def card_params

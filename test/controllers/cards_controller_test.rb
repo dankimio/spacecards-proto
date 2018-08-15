@@ -26,17 +26,15 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update card' do
-    skip
-    patch card_url(@card), params: { card: { name: @card.name } }
-    assert_redirected_to card_url(@card)
+    patch card_url(@card), params: { card: { front: @card.front, back: @card.back } }
+    assert_redirected_to deck_cards_url(@card.deck)
   end
 
   test 'should destroy card' do
-    skip
     assert_difference('Card.count', -1) do
       delete card_url(@card)
     end
 
-    assert_redirected_to cards_url
+    assert_redirected_to deck_cards_url(@card.deck)
   end
 end
