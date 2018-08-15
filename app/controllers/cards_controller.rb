@@ -21,11 +21,7 @@ class CardsController < ApplicationController
   end
 
   def update
-    if @card.update(card_params)
-      redirect_to deck_cards_url(@card.deck), notice: 'Card was updated successfully'
-    else
-      render :new
-    end
+    @card.update(card_params)
   end
 
   def destroy
