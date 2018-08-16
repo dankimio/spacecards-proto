@@ -1,5 +1,5 @@
 <div class="flex items-center">
-  <div class="lg:w-1/2 md:my-10 lg:my-20">
+  <div class="lg:w-1/2 my-8 md:my-10 lg:mt-24 lg:mb-32">
     <h1 class="md:text-4xl lg:text-5xl text-grey-darkest">Memorize <span class="text-indigo-dark">everything</span> with flashcards</h1>
 
     <p class="mb-8 leading-normal">Remember everything with flashcards and spaced repetition. Start learning languages and other subjects now!</p>
@@ -8,5 +8,68 @@
   </div>
   <div class="hidden lg:block lg:w-1/2 text-center">
     <%= image_tag 'card.png', class: 'w-full max-w-xs' %>
+  </div>
+</div>
+
+<hr class="border-b-2">
+
+<div class="py-10">
+  <h2 class="text-3xl text-grey-darkest mb-6">How to use flashcards</h2>
+
+  <div class="flex flex-col lg:flex-row lg:flex-row justify-between">
+    <div class="mb-8 lg:mb-0 lg:mr-8">
+      <h3 class="font-extrabold text-3xl text-grey-darker mb-3">1.</h3>
+      <div class="flex lg:mb-6">
+        <i class="material-icons text-grey mr-2 mb-2" style="font-size:4.5rem">library_books</i>
+        <i class="material-icons text-grey mr-2 mb-2" style="font-size:4.5rem">library_music</i>
+        <i class="material-icons text-grey mr-2 mb-2" style="font-size:4.5rem">movie</i>
+      </div>
+      <p class="text-lg text-grey-darkest">Use your own content</p>
+    </div>
+    <div class="self-center hidden lg:block">
+      <i class="material-icons text-grey-light" style="font-size:4rem">arrow_forward_ios</i>
+    </div>
+    <div class="mb-8 lg:mb-0 lg:mr-8">
+      <h3 class="font-extrabold text-3xl text-grey-darker mb-3">2.</h3>
+      <div class="mb-4 lg:mb-5">
+        <div class="mb-3 text-grey-darker">
+          <span class="border-b-2 border-indigo-lighter">un marché</span> → <span class="border-b-2 border-indigo-lighter mr-1">market</span> <span class="text-grey">/maʁ.ʃe/</span>
+        </div>
+        <div class="mb-3 text-grey-darker">
+          <span class="border-b-2 border-indigo-lighter">une croissance</span> → <span class="border-b-2 border-indigo-lighter mr-1">growth</span> <span class="text-grey">/kʁwa.sɑ̃s/</span>
+        </div>
+        <div class="mb-3 text-grey-darker">
+          <span class="border-b-2 border-indigo-lighter">une mère</span> → <span class="border-b-2 border-indigo-lighter mr-1">mother</span> <span class="text-grey">/mɛʁ/</span>
+        </div>
+      </div>
+      <p class="text-lg text-grey-darkest">Create cards</p>
+    </div>
+    <div class="self-center hidden lg:block">
+      <i class="material-icons text-grey-light" style="font-size:4rem">arrow_forward_ios</i>
+    </div>
+    <div class="mb-8 lg:mb-0 lg:mr-8">
+      <h3 class="font-extrabold text-3xl text-grey-darker mb-3">3.</h3>
+      <div class="mb-2 flex">
+        <div class="bg-grey-lightest rounded py-3 px-5 text-sm text-grey-darker mr-4">
+          un marché
+          <hr class="border-b-2 my-2">
+          market
+
+          <div class="flex justify-between mt-3">
+            <div class="inline-block rounded py-1 px-3 mr-2 bg-grey-light">1</div>
+            <div class="inline-block rounded py-1 px-3 mr-2 bg-grey-light">2</div>
+            <div class="inline-block rounded py-1 px-3 bg-grey-light">3</div>
+          </div>
+        </div>
+        <div class="bg-grey-lightest rounded py-3 px-5 text-sm text-grey-darker">
+          une croissance
+          <hr class="border-b-2 my-2">
+          growth
+
+          <div class="rounded mt-3 py-1 px-3 mr-2 bg-grey-light">Show answer</div>
+        </div>
+      </div>
+      <p class="text-lg text-grey-darkest">Practice daily</p>
+    </div>
   </div>
 </div>
