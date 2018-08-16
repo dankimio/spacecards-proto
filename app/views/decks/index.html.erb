@@ -1,6 +1,7 @@
-<h2 class="font-normal text-3xl">
+<h1 class="text-grey-darkest">
   Decks
-  <%= link_to 'New deck', new_deck_path, class: 'text-base ml-1' %>
-</h2>
+
+  <small><%= link_to 'New deck', new_deck_path, class: 'text-base ml-1' %></small>
+</h1>
 
 <%= render @decks %>
