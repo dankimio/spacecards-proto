@@ -11,7 +11,7 @@ user = User.create!(email: 'foo@bar.com', password: 'qwerty123')
 5.times do |i|
   deck = Deck.create!(name: "Deck #{i + 1}", user: user)
 
-  10.times do |i|
+  3.times do |i|
     deck.cards.create!(front: "Front #{i + 1}", back: "Back #{i + 1}")
   end
 end

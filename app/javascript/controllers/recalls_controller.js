@@ -1,7 +1,7 @@
 import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  static targets = ['front', 'back', 'showResponseButton', 'responseButtons']
+  static targets = ['card', 'front', 'back', 'showResponseButton', 'responseButtons', 'stats']
 
   connect() {
     this.load()
@@ -9,7 +9,7 @@ export default class extends Controller {
 
   showCard() {
     if (!this.currentCard) {
-      this.hide()
+      this.finish()
       return
     }
 
@@ -35,12 +35,12 @@ export default class extends Controller {
   }
 
   // Hide everything and show 'No cards left' message
-  hide() {
-    this.frontTarget.textContent = 'No cards left!'
-    this.backTarget.style.display = 'none'
-
+  finish() {
     this.showResponseButtonTarget.style.display = 'none'
     this.responseButtonsTarget.style.display = 'none'
+
+    this.cardTarget.classList.add('hidden')
+    this.statsTarget.classList.add('active')
   }
 
   recall(event) {
@@ -81,7 +81,7 @@ export default class extends Controller {
         if (this.currentCard) {
           this.showCard()
         } else {
-          this.hide()
+          this.finish()
         }
       })
   }

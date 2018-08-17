@@ -78,8 +78,16 @@ h4, h5, h6 {
 }
 
 .stats {
+  @apply .hidden;
+
   & .stats-icon {
     font-size: 5rem;
+  }
+
+  &.active {
+    @apply .flex;
+
+    transition: var(--transition-base);
   }
 }
 
