@@ -14,6 +14,9 @@ export default class extends Controller {
     // Shortcuts
     document.onkeyup = event => {
       switch (event.keyCode) {
+        case 13:
+          this.showResponse()
+          break;
         case 49:
           this.recall(1)
           break
@@ -46,6 +49,9 @@ export default class extends Controller {
   }
 
   showResponse() {
+    if (this.answerShown) {
+      return
+    }
     this.answerShown = true
 
     this.backTarget.classList.add('active')
