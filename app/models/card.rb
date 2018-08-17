@@ -10,7 +10,12 @@ class Card < ApplicationRecord
       repetitions: repetitions,
       interval: interval
     )
-
-    update(due_on: flashcard.recall(quality))
+    flashcard.recall(quality)
+    update(
+      easiness_factor: flashcard.easiness_factor,
+      repetitions: flashcard.repetitions,
+      interval: flashcard.interval,
+      due_on: flashcard.due_on
+    )
   end
 end
