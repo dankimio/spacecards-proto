@@ -47,6 +47,37 @@ h4, h5, h6 {
   @apply .inline-flex .rounded-full .text-white .items-center .justify-center;
 }
 
+#how-to {
+  & h3 {
+    @apply .font-extrabold .text-3xl .text-grey-darker .mb-3;
+  }
+  & .arrow {
+     @apply .text-grey-light;
+
+     font-size: 2.5rem;
+
+     @media (min-width: 768px) {
+       font-size: 3rem;
+     }
+     @media (min-width: 1200px) {
+       font-size: 4rem;
+     }
+  }
+  & #step-1 {
+    & i {
+      @apply .text-grey .mr-2 .mb-2;
+
+      font-size: 4rem;
+    }
+  }
+  & #step-2 {
+    & .word {
+      @apply .border-b-2 .border-indigo-lighter
+    }
+  }
+}
+
+
 #response-buttons .btn {
   display: block;
 
