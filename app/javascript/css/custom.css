@@ -77,6 +77,12 @@ h4, h5, h6 {
   }
 }
 
+.stats {
+  & .stats-icon {
+    font-size: 5rem;
+  }
+}
+
 
 #response-buttons .btn {
   display: block;
