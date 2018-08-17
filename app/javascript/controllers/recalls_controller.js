@@ -9,6 +9,7 @@ export default class extends Controller {
 
   initialize() {
     this.cardsCount = 0
+    this.answerShown = false
 
     // Shortcuts
     document.onkeyup = event => {
@@ -45,6 +46,8 @@ export default class extends Controller {
   }
 
   showResponse() {
+    this.answerShown = true
+
     this.backTarget.classList.add('active')
     this.backTarget.textContent = this.currentCard.back
 
@@ -77,10 +80,17 @@ export default class extends Controller {
   }
 
   recall(quality) {
+    // Skip if answer was not displayed
+    if (!this.answerShown) {
+      return
+    }
+
     // TODO: refactor
     if (quality > 1) {
       this.cardsCount += 1
     }
+
+    this.answerShown = false
 
     let formData = new FormData()
     formData.append('card[quality]', quality)
