@@ -26,7 +26,6 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy
-    redirect_to deck_cards_url(@card.deck), notice: 'Card was deleted successfully'
   end
 
   private
