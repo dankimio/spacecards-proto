@@ -45,6 +45,6 @@ class DecksController < ApplicationController
   end
 
   def deck_params
-    params.require(:deck).permit(:name)
+    params.require(:deck).permit(:name, :new_cards_per_day, :reviews_per_day)
   end
 end
