@@ -3,7 +3,7 @@ class CardsController < ApplicationController
   before_action :set_card, only: %i[update destroy]
 
   def index
-    @cards = @deck.cards.order(created_at: :desc)
+    @cards = @deck.cards.order(created_at: :asc)
   end
 
   def new
