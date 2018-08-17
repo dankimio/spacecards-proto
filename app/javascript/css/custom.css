@@ -78,16 +78,17 @@ h4, h5, h6 {
 }
 
 .stats {
-  @apply .hidden;
+  @apply .flex;
+
+  transform: scale(0);
+  transition: transform .5s cubic-bezier(.5, 0, .3, 1);
 
   & .stats-icon {
     font-size: 5rem;
   }
 
   &.active {
-    @apply .flex;
-
-    transition: var(--transition-base);
+    transform: scale(1);
   }
 }
 
