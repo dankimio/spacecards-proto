@@ -6,7 +6,7 @@ class RecallsController < ApplicationController
   end
 
   def new
-    @cards = @deck.cards.due
+    @cards = @deck.cards.due.random
 
     respond_to do |format|
       format.json
