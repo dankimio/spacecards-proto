@@ -24,6 +24,8 @@ gem 'devise', '~> 4.4'
 # Spaced repetition algorithm
 gem 'repetition', '~> 2.0'
 
+gem 'activerecord-import', '~> 0.25'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
