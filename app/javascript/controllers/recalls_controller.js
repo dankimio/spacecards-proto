@@ -1,7 +1,15 @@
 import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  static targets = ['card', 'front', 'back', 'showResponseButton', 'responseButtons', 'stats']
+  static targets = [
+    'card', 'front', 'back',
+    'showResponseButton', 'responseButtons',
+    'stats', 'cardsCount', 'deckProgress'
+  ]
+
+  initialize() {
+    this.cardsCount = 0
+  }
 
   connect() {
     this.load()
@@ -36,6 +44,8 @@ export default class extends Controller {
 
   // Hide everything and show 'No cards left' message
   finish() {
+    this.cardsCountTarget.textContent = this.cardsCount
+
     this.showResponseButtonTarget.style.display = 'none'
     this.responseButtonsTarget.style.display = 'none'
 
@@ -45,6 +55,11 @@ export default class extends Controller {
 
   recall(event) {
     let quality = event.target.dataset.quality
+
+    // TODO: refactor
+    if (quality > 1) {
+      this.cardsCount += 1
+    }
 
     let formData = new FormData()
     formData.append('card[quality]', quality)

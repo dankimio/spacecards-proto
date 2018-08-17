@@ -78,7 +78,7 @@ h4, h5, h6 {
 }
 
 .stats {
-  @apply .flex;
+  @apply .flex .absolute;
 
   transform: scale(0);
   transition: transform .5s cubic-bezier(.5, 0, .3, 1);
@@ -88,6 +88,8 @@ h4, h5, h6 {
   }
 
   &.active {
+    @apply .static;
+
     transform: scale(1);
   }
 }
