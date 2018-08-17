@@ -9,6 +9,24 @@ export default class extends Controller {
 
   initialize() {
     this.cardsCount = 0
+
+    // Shortcuts
+    document.onkeyup = event => {
+      switch (event.keyCode) {
+        case 49:
+          this.recall(1)
+          break
+        case 50:
+          this.recall(2)
+          break
+        case 51:
+          this.recall(3)
+          break
+        case 52:
+          this.recall(4)
+          break
+      }
+    }
   }
 
   connect() {
@@ -53,9 +71,12 @@ export default class extends Controller {
     this.statsTarget.classList.add('active')
   }
 
-  recall(event) {
+  answer(event) {
     let quality = event.target.dataset.quality
+    this.recall(quality)
+  }
 
+  recall(quality) {
     // TODO: refactor
     if (quality > 1) {
       this.cardsCount += 1

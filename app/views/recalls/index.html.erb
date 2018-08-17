@@ -2,7 +2,7 @@
   <%= link_to @deck.name, @deck %> → Study
 </h1>
 
-<div class="" data-controller="recalls" data-recalls-get-url="<%= new_deck_recall_path(@deck) %>" data-recalls-post-url="<%= recalls_path %>">
+<div id="recall" data-controller="recalls" data-recalls-get-url="<%= new_deck_recall_path(@deck) %>" data-recalls-post-url="<%= recalls_path %>">
   <div class="bg-grey-lightest rounded lg:w-2/3 xl:w-1/2 mb-5" data-target="recalls.card">
     <div class="card-front" data-target="recalls.front">
     </div>
@@ -33,9 +33,9 @@
   <a href="#" class="btn btn-outline-primary" data-target="recalls.showResponseButton" data-action="recalls#showResponse">Show answer</a>
 
   <div class="hidden" id="response-buttons" data-target="recalls.responseButtons">
-    <%= link_to '1 – Bad', '#', data: { action: 'recalls#recall', quality: 1 }, class: 'btn btn-outline-primary mb-3 mr-2' %>
-    <%= link_to '2 – Okay', '#', data: { action: 'recalls#recall', quality: 2 }, class: 'btn btn-outline-primary mb-3 mr-2' %>
-    <%= link_to '3 – Good', '#', data: { action: 'recalls#recall', quality: 3 }, class: 'btn btn-outline-primary mb-3 mr-2' %>
-    <%= link_to '4 – Excellent', '#', data: { action: 'recalls#recall', quality: 4 }, class: 'btn btn-outline-primary mb-3 mr-2' %>
+    <%= link_to '1 – Bad', '#', data: { action: 'recalls#answer', quality: 1 }, class: 'btn btn-outline-primary mb-3 mr-2' %>
+    <%= link_to '2 – Okay', '#', data: { action: 'recalls#answer', quality: 2 }, class: 'btn btn-outline-primary mb-3 mr-2' %>
+    <%= link_to '3 – Good', '#', data: { action: 'recalls#answer', quality: 3 }, class: 'btn btn-outline-primary mb-3 mr-2' %>
+    <%= link_to '4 – Excellent', '#', data: { action: 'recalls#answer', quality: 4 }, class: 'btn btn-outline-primary mb-3 mr-2' %>
   </div>
 </div>
