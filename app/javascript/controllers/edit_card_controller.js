@@ -7,10 +7,7 @@ export default class extends Controller {
   }
 
   toggle() {
-    this.cardTarget.classList.toggle('flex')
-    this.cardTarget.classList.toggle('hidden')
-
-    this.formTarget.classList.toggle('hidden')
-    this.formTarget.classList.toggle('flex')
+    this.cardTarget.classList.toggle('active')
+    this.formTarget.classList.toggle('active')
   }
 }
