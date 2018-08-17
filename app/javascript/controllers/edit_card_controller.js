@@ -1,13 +1,17 @@
 import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  static targets = ['card', 'form']
+  static targets = ['card', 'form', 'formFront', 'formBack']
 
   connect() {
   }
 
-  toggle() {
+  toggle(event) {
+    event.preventDefault()
+
     this.cardTarget.classList.toggle('active')
     this.formTarget.classList.toggle('active')
+
+    this.formFrontTarget.focus()
   }
 }

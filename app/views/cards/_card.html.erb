@@ -11,8 +11,8 @@
     </div>
 
     <%= form_with model: card, class: 'card-form', data: { target: 'edit-card.form' } do |f| %>
-      <%= f.text_field :front, required: true, placeholder: true %>
-      <%= f.text_field :back, required: true, placeholder: true %>
+      <%= f.text_field :front, required: true, placeholder: true, data: { target: 'edit-card.formFront' } %>
+      <%= f.text_field :back, required: true, placeholder: true, data: { target: 'edit-card.formBack' } %>
 
       <%= f.submit 'Save', class: 'btn btn-primary mb-4 md:mb-0' %>
     <% end %>
