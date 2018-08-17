@@ -30,11 +30,13 @@ h4, h5, h6 {
   background: linear-gradient(to right, #7886d7, #5661b3);
 }
 
-.card-front {
+/* Recalls */
+
+.recall-front {
   @apply .p-5;
 }
 
-.card-back {
+.recall-back {
   transition: var(--transition-base);
 
   &.active {
