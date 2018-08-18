@@ -81,6 +81,8 @@ export default class extends Controller {
   }
 
   answer(event) {
+    event.preventDefault()
+
     let quality = event.target.dataset.quality
     this.recall(quality)
   }
@@ -108,16 +110,21 @@ export default class extends Controller {
       method: 'POST',
       headers: { 'X-CSRF-Token': getMetaValue('csrf-token') }
     })
-    .then(response => {
-      if (response.ok) {
-        this.cards = this.cards.filter(item => item !== this.currentCard)
-        this.currentCard = this.cards[0]
+    .then(response => response.json())
+    .then(json => {
+      let new_due_at = new Date(json.due_at)
+      let now = new Date()
 
-        if (this.currentCard) {
-          this.showCard()
-        } else {
-          this.load()
-        }
+      this.cards = this.cards.filter(item => item !== this.currentCard)
+      if (new_due_at.getTime() <= now.getTime()) {
+        this.cards.push(this.currentCard)
+      }
+      this.currentCard = this.cards[0]
+
+      if (this.currentCard) {
+        this.showCard()
+      } else {
+        this.load()
       }
     })
   }

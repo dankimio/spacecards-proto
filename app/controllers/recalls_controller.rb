@@ -6,7 +6,7 @@ class RecallsController < ApplicationController
   end
 
   def new
-    @cards = @deck.cards.due.random
+    @cards = @deck.cards.for_review
 
     respond_to do |format|
       format.json
@@ -15,7 +15,7 @@ class RecallsController < ApplicationController
 
   def create
     @card.recall(card_params[:quality].to_i)
-    head :ok
+    render status: :ok
   end
 
   private

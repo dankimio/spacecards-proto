@@ -1,1 +1,1 @@
-json.extract! card, :id, :front, :back
+json.extract! card, :id, :front, :back, :due_at
