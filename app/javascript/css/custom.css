@@ -106,10 +106,6 @@ h4, h5, h6 {
   }
 }
 
-.circle {
-  @apply .inline-flex .rounded-full .text-white .items-center .justify-center;
-}
-
 #how-to {
   & h3 {
     @apply .font-extrabold .text-3xl .text-grey-darker .mb-3;
