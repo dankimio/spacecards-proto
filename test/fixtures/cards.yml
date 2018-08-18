@@ -5,7 +5,7 @@ card:
   easiness_factor: 2.5
   repetitions: 1
   interval: 1
-  due_on: <%= 1.day.ago %>
+  due_at: <%= 1.day.ago %>
   recalled_at: <%= 1.day.ago %>
 
 two:
@@ -14,5 +14,5 @@ two:
   easiness_factor: 2.5
   repetitions: 1
   interval: 1
-  due_on: 2018-08-07
+  due_at: 2018-08-07
   recalled_at: 2018-08-07 23:06:35
