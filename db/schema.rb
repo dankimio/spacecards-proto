@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_17_202402) do
+ActiveRecord::Schema.define(version: 2018_08_18_002802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2018_08_17_202402) do
     t.float "easiness_factor", default: 2.5
     t.integer "repetitions", default: 0
     t.integer "interval", default: 0
-    t.date "due_on"
+    t.datetime "due_at"
     t.datetime "recalled_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
