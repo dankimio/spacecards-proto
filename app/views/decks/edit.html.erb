@@ -18,4 +18,11 @@
   </div>
 
   <%= f.submit 'Save', class: 'btn btn-primary' %>
+
+  <h2 class="mt-6">Danger zone</h2>
+
+  <%= link_to deck_path(@deck), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
+    <i class="material-icons mr-1" style="font-size:.925rem">delete</i>
+    Delete
+  <% end %>
 <% end %>
