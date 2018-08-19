@@ -3,7 +3,7 @@ class CardsController < ApplicationController
   before_action :set_card, only: %i[update destroy]
 
   def index
-    @cards = @deck.cards.order(created_at: :asc)
+    @cards = @deck.cards.order(created_at: :desc)
   end
 
   def new
@@ -12,12 +12,7 @@ class CardsController < ApplicationController
 
   def create
     @card = @deck.cards.build(card_params)
-
-    if @card.save
-      redirect_to new_deck_card_url(@deck), notice: 'Card was added successfully'
-    else
-      render :new
-    end
+    @card.save
   end
 
   def update

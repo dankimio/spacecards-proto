@@ -2,4 +2,25 @@
   <%= link_to @deck.name, @deck %> → Cards
 </h1>
 
-<%= render @cards %>
+<div data-controller="add-cards">
+  <%= link_to 'Add cards', '#', class: 'btn btn-primary mb-6', data: { action: 'add-cards#addForm' } %>
+
+  <div class="hidden py-5 px-6 bg-grey-lightest rounded mb-4" data-target="add-cards.formContainer">
+    <%= form_with model: Card.new, url: deck_cards_path(@deck),
+                  class: 'flex flex-col md:flex-row items-center', data: { type: :js } do |f| %>
+      <%= f.text_area :front,
+                      required: true, placeholder: true,
+                      class: 'flex-1 bg-transparent pb-2 border-b-2 mr-5 focus:border-indigo h-8' %>
+      <%= f.text_area :back,
+                      required: true, placeholder: true,
+                      class: 'flex-1 bg-transparent pb-2 border-b-2 mr-5 focus:border-indigo h-8' %>
+
+      <%= link_to 'Save', '#', class: 'btn btn-primary mb-4 md:mb-0', data: { action: 'add-cards#submit' } %>
+      <%= f.submit class: 'hidden' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="cards">
+  <%= render @cards %>
+</div>
