@@ -14,6 +14,7 @@ export default class extends Controller {
     // Insert and show
     this.formContainerTarget.after(newForm)
     newForm.classList.remove('hidden')
+    newForm.querySelector('#card_front').focus()
   }
 
   submit(event) {
