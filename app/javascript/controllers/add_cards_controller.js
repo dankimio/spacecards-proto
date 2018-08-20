@@ -29,4 +29,12 @@ export default class extends Controller {
       currentForm.querySelector('input[type="submit"]').click()
     }
   }
+
+  cancel(event) {
+    event.preventDefault()
+
+    let currentForm = event.target.parentNode
+    let formContainer = currentForm.parentNode
+    formContainer.parentNode.removeChild(formContainer)
+  }
 }

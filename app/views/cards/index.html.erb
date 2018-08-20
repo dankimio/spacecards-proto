@@ -18,7 +18,12 @@
       <%= link_to 'Save', '#', class: 'btn btn-primary mb-4 md:mb-0', data: { action: 'add-cards#submit' } %>
       <%= f.submit class: 'hidden' %>
     <% end %>
-    <small class="text-grey-dark inline-block mt-3">Use Markdown to add formatting</small>
+
+    <div class="flex justify-between mt-3">
+      <small class="text-grey-dark inline-block">Use Markdown to add formatting</small>
+
+      <%= link_to 'Cancel', '#', data: { action: 'add-cards#cancel' } %>
+    </div>
   </div>
 </div>
 
