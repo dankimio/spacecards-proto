@@ -14,18 +14,13 @@
 
   <div class="field">
     <%= f.label :password %> <i></i>
-    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+    <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
     <small>Leave blank if you don't want to change it</small>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-  </div>
-
-  <div class="field">
     <%= f.label :current_password %>
-    <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+    <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
     <small>We need your current password to confirm your changes</small>
   </div>
 
