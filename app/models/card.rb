@@ -22,4 +22,12 @@ class Card < ApplicationRecord
       recalled_at: Time.zone.now
     )
   end
+
+  def front_html
+    Kramdown::Document.new(front).to_html
+  end
+
+  def back_html
+    Kramdown::Document.new(back).to_html
+  end
 end

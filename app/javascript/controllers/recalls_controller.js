@@ -44,7 +44,7 @@ export default class extends Controller {
     }
 
     // Display the front of the card
-    this.frontTarget.textContent = this.currentCard.front
+    this.frontTarget.innerHTML =this.currentCard.front_html
     this.hideResponse()
   }
 
@@ -55,7 +55,7 @@ export default class extends Controller {
     this.answerShown = true
 
     this.backTarget.classList.add('active')
-    this.backTarget.textContent = this.currentCard.back
+    this.backTarget.innerHTML = this.currentCard.back_html
 
     this.showResponseButtonTarget.style.display = 'none'
     this.responseButtonsTarget.style.display = 'block'
