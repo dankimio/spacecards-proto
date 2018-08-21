@@ -54,7 +54,7 @@ form label {
 }
 
 .btn-lg {
-  @apply .py-3 .px-4 .tracking-wide;
+  @apply .py-3 .px-5 .tracking-wide;
 }
 
 .btn-primary {
