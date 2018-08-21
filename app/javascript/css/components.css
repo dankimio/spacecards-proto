@@ -15,7 +15,7 @@ form label {
 }
 
 .form-control {
-  @apply .shadow .appearance-none .border .rounded .w-full .py-2 .px-3 .text-grey-darker .leading-tight;
+  @apply .block .appearance-none .border .rounded .w-full .p-3 .text-grey-darkest .leading-tight;
 
   &:focus {
     transition: var(--transition-base);
@@ -51,6 +51,10 @@ form label {
   &:focus {
     @apply .outline-none .shadow-outline;
   }
+}
+
+.btn-lg {
+  @apply .py-3 .px-4 .tracking-wide;
 }
 
 .btn-primary {
