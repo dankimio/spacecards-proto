@@ -1,7 +1,5 @@
 <h1 class="text-grey-darkest">
   <%= @deck.name %>
-
-  <small><%= link_to 'Add cards', new_deck_card_path(@deck), class: 'text-base ml-1' %></small>
 </h1>
 
 <%= link_to deck_study_path(@deck), class: 'btn btn-primary' do %>
