@@ -24,6 +24,14 @@ form label {
   }
 }
 
+.field_with_errors label {
+  @apply .text-red;
+}
+
+.field_with_errors .form-control {
+  @apply .border-red;
+}
+
 /* Alerts */
 
 .alert {
