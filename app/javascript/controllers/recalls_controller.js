@@ -2,9 +2,14 @@ import { Controller } from 'stimulus'
 
 export default class extends Controller {
   static targets = [
-    'card', 'front', 'back',
-    'showResponseButton', 'responseButtons',
-    'stats', 'cardsCount', 'deckProgress'
+    'card',
+    'front',
+    'back',
+    'showResponseButton',
+    'responseButtons',
+    'stats',
+    'cardsCount',
+    'deckProgress'
   ]
 
   initialize() {
@@ -16,7 +21,7 @@ export default class extends Controller {
       switch (event.keyCode) {
         case 13:
           this.showResponse()
-          break;
+          break
         case 49:
           this.recall(1)
           break
@@ -44,7 +49,7 @@ export default class extends Controller {
     }
 
     // Display the front of the card
-    this.frontTarget.innerHTML =this.currentCard.front_html
+    this.frontTarget.innerHTML = this.currentCard.front_html
     this.hideResponse()
   }
 
@@ -110,23 +115,23 @@ export default class extends Controller {
       method: 'POST',
       headers: { 'X-CSRF-Token': getMetaValue('csrf-token') }
     })
-    .then(response => response.json())
-    .then(json => {
-      let new_due_at = new Date(json.due_at)
-      let now = new Date()
+      .then(response => response.json())
+      .then(json => {
+        let new_due_at = new Date(json.due_at)
+        let now = new Date()
 
-      this.cards = this.cards.filter(item => item !== this.currentCard)
-      if (new_due_at.getTime() <= now.getTime()) {
-        this.cards.push(this.currentCard)
-      }
-      this.currentCard = this.cards[0]
+        this.cards = this.cards.filter(item => item !== this.currentCard)
+        if (new_due_at.getTime() <= now.getTime()) {
+          this.cards.push(this.currentCard)
+        }
+        this.currentCard = this.cards[0]
 
-      if (this.currentCard) {
-        this.showCard()
-      } else {
-        this.load()
-      }
-    })
+        if (this.currentCard) {
+          this.showCard()
+        } else {
+          this.load()
+        }
+      })
   }
 
   // Load cards from the server

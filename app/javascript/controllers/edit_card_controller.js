@@ -3,8 +3,7 @@ import { Controller } from 'stimulus'
 export default class extends Controller {
   static targets = ['card', 'form', 'formFront', 'formBack']
 
-  connect() {
-  }
+  connect() {}
 
   toggle(event) {
     event.preventDefault()
