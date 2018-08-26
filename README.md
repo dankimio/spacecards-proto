@@ -1,6 +1,6 @@
-# Flashcards
+# Spacecards
 
-Flashcards app
+Flashcards with spaced repetition
 
 - Ruby version
 - System dependencies

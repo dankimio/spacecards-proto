@@ -1,5 +1,5 @@
 {
-  "name": "flashcards",
+  "name": "spacecards",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
