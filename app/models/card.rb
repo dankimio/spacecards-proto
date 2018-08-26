@@ -5,7 +5,7 @@ class Card < ApplicationRecord
   scope :random, -> { order('RANDOM()') }
   scope :recalled_today, -> { where('recalled_at >= ?', Time.zone.now.beginning_of_day) }
 
-  validates :front, :back, length: { minimum: 1 }
+  validates :front, :back, length: { minimum: 1, maximum: 255 }
 
   def recall(quality)
     flashcard = Repetition::Flashcard.new(
