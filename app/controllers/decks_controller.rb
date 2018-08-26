@@ -1,11 +1,8 @@
 class DecksController < ApplicationController
-  before_action :set_deck, only: %i[show edit update destroy]
+  before_action :set_deck, only: %i[edit update destroy]
 
   def index
     @decks = current_user.decks
-  end
-
-  def show
   end
 
   def new

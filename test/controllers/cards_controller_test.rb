@@ -19,10 +19,10 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create card' do
     assert_difference('Card.count') do
-      post deck_cards_url(@deck), params: { card: { front: @card.front, back: @card.back } }
+      post deck_cards_url(@deck, format: :js), params: { card: { front: @card.front, back: @card.back } }
     end
 
-    assert_redirected_to new_deck_card_url(@deck)
+    assert_response :success
   end
 
   test 'should update card' do
@@ -32,9 +32,9 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should destroy card' do
     assert_difference('Card.count', -1) do
-      delete card_url(@card)
+      delete card_url(@card, format: :js)
     end
 
-    assert_redirected_to deck_cards_url(@card.deck)
+    assert_response :success
   end
 end

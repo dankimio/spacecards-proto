@@ -24,11 +24,6 @@ class DecksControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to deck_url(Deck.last)
   end
 
-  test 'should show deck' do
-    get deck_url(@deck)
-    assert_response :success
-  end
-
   test 'should get edit' do
     get edit_deck_url(@deck)
     assert_response :success
