@@ -13,6 +13,6 @@ class Deck < ApplicationRecord
     end
   end
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 50 }, uniqueness: { scope: :user }
   validates :new_cards_per_day, :reviews_per_day, numericality: { greater_than: 0 }, allow_nil: true
 end
