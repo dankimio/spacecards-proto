@@ -1,5 +1,5 @@
 <h1 class="text-grey-darkest">
-  <%= link_to @deck.name, @deck %> → Edit
+  <%= @deck.name %> → Edit
 </h1>
 
 <%= form_with model: @deck, local: true, class: 'w-64' do |f| %>
