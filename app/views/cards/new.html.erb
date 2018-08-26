@@ -1,5 +1,5 @@
 <h1 class="text-grey-darkest">
-  <%= @deck.name %> → New card
+  <%= @deck.name %> <span class="font-light mx-2">→</span> New card
 </h1>
 
 <%= form_with model: @card, url: deck_cards_path(@deck), local: true, class: 'w-full md:w-2/3 lg:w-1/2' do |f| %>
