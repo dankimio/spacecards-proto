@@ -21,7 +21,7 @@ class DecksControllerTest < ActionDispatch::IntegrationTest
       post decks_url, params: { deck: { name: @deck.name } }
     end
 
-    assert_redirected_to deck_url(Deck.last)
+    assert_redirected_to deck_cards_path(Deck.last)
   end
 
   test 'should get edit' do

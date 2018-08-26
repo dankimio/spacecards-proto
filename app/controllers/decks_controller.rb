@@ -13,7 +13,7 @@ class DecksController < ApplicationController
     @deck = current_user.decks.build(deck_params.merge(user: User.first))
 
     if @deck.save
-      redirect_to @deck, notice: 'Deck was created successfully'
+      redirect_to deck_cards_path(@deck), notice: 'Deck was created successfully'
     else
       render :new
     end
