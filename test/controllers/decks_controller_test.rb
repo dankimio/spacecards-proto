@@ -18,7 +18,7 @@ class DecksControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create deck' do
     assert_difference('Deck.count') do
-      post decks_url, params: { deck: { name: @deck.name } }
+      post decks_url, params: { deck: { name: 'New unique name' } }
     end
 
     assert_redirected_to deck_cards_path(Deck.last)
