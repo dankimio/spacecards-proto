@@ -6,7 +6,7 @@ export default class extends Controller {
     'card',
     'front',
     'back',
-    'showResponseButton',
+    'showBackButton',
     'responseButtons',
     'stats',
     'cardsCount',
@@ -32,10 +32,10 @@ export default class extends Controller {
 
     // Display the front of the card
     this.frontTarget.innerHTML = this.currentCard.front_html
-    this.hideResponse()
+    this.hideBack()
   }
 
-  showResponse(event) {
+  showBack(event) {
     event.preventDefault()
 
     if (this.answerShown) {
@@ -46,15 +46,15 @@ export default class extends Controller {
     this.backTarget.classList.add('active')
     this.backTarget.innerHTML = this.currentCard.back_html
 
-    this.showResponseButtonTarget.style.display = 'none'
+    this.showBackButtonTarget.style.display = 'none'
     this.responseButtonsTarget.style.display = 'block'
   }
 
-  hideResponse() {
+  hideBack() {
     this.backTarget.classList.remove('active')
     this.backTarget.textContent = ''
 
-    this.showResponseButtonTarget.style.display = 'inline-block'
+    this.showBackButtonTarget.style.display = 'inline-block'
     this.responseButtonsTarget.style.display = 'none'
   }
 
@@ -62,7 +62,7 @@ export default class extends Controller {
   finish() {
     this.cardsCountTarget.textContent = this.cardsCount
 
-    this.showResponseButtonTarget.style.display = 'none'
+    this.showBackButtonTarget.style.display = 'none'
     this.responseButtonsTarget.style.display = 'none'
 
     this.cardTarget.classList.add('hidden')
@@ -142,7 +142,7 @@ export default class extends Controller {
     document.onkeyup = event => {
       switch (event.keyCode) {
         case 13:
-          this.showResponse()
+          this.showBack()
           break
         case 49:
           this.recall(1)
