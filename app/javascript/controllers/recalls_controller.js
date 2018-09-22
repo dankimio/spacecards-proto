@@ -48,6 +48,8 @@ export default class extends Controller {
     this.backTarget.classList.add('active')
     this.backTarget.innerHTML = this.currentCard.back_html
 
+    this.cardTarget.classList.add('animated', 'flipInX', 'faster')
+
     this.showBackButtonTarget.style.display = 'none'
     this.responseButtonsTarget.style.display = 'block'
   }
@@ -84,20 +86,14 @@ export default class extends Controller {
       return
     }
 
+    this.cardTarget.classList.remove('animated', 'flipInX', 'faster')
+
     // TODO: refactor
     if (quality > 1) {
       this.cardsCount += 1
     }
 
     this.answerShown = false
-
-    this.cards = this.cards.filter(item => item !== this.currentCard)
-    this.currentCard = this.cards[0]
-    if (this.currentCard) {
-      this.showCard()
-    } else {
-      this.load()
-    }
 
     let formData = new FormData()
     formData.append('card[quality]', quality)
@@ -113,6 +109,14 @@ export default class extends Controller {
       }
     })
     .catch(error => alert(error))
+
+    this.cards = this.cards.filter(item => item !== this.currentCard)
+    this.currentCard = this.cards[0]
+    if (this.currentCard) {
+      this.showCard()
+    } else {
+      this.load()
+    }
   }
 
   // Load cards from the server
