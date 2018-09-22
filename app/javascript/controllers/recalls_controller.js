@@ -36,7 +36,9 @@ export default class extends Controller {
   }
 
   showBack(event) {
-    event.preventDefault()
+    if (event) {
+      event.preventDefault()
+    }
 
     if (this.answerShown) {
       return
