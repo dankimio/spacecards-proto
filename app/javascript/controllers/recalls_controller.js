@@ -91,6 +91,14 @@ export default class extends Controller {
 
     this.answerShown = false
 
+    this.cards = this.cards.filter(item => item !== this.currentCard)
+    this.currentCard = this.cards[0]
+    if (this.currentCard) {
+      this.showCard()
+    } else {
+      this.load()
+    }
+
     let formData = new FormData()
     formData.append('card[quality]', quality)
     formData.append('card[id]', this.currentCard.id)
@@ -104,24 +112,7 @@ export default class extends Controller {
         'X-CSRF-Token': ApplicationHelper.getMetaValue('csrf-token')
       }
     })
-      .then(response => response.json())
-      .then(json => {
-        let new_due_at = new Date(json.due_at)
-        let now = new Date()
-
-        this.cards = this.cards.filter(item => item !== this.currentCard)
-        if (new_due_at.getTime() <= now.getTime()) {
-          this.cards.push(this.currentCard)
-        }
-        this.currentCard = this.cards[0]
-
-        if (this.currentCard) {
-          this.showCard()
-        } else {
-          this.load()
-        }
-      })
-      .catch(error => alert(error))
+    .catch(error => alert(error))
   }
 
   // Load cards from the server

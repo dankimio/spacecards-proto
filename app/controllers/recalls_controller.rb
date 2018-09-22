@@ -15,7 +15,7 @@ class RecallsController < ApplicationController
 
   def create
     @card.recall(card_params[:quality].to_i)
-    render status: :ok
+    head :ok
   end
 
   private

@@ -98,10 +98,7 @@ h4, h5, h6 {
 }
 
 .recall-back {
-  transition: var(--transition-base);
-
   &.active {
-    transition: var(--transition-base);
     @apply .border-t .border-grey-lighter .py-5 .mx-5;
   }
 }
