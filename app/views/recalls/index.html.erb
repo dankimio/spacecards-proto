@@ -33,9 +33,17 @@
   <a href="#" class="btn btn-outline-primary" data-target="recalls.showResponseButton" data-action="recalls#showResponse">Show answer</a>
 
   <div class="hidden" id="response-buttons" data-target="recalls.responseButtons">
-    <%= link_to '1 – Bad', '#', data: { action: 'recalls#answer', quality: 1 }, class: 'btn btn-outline-primary mb-3 mr-2' %>
-    <%= link_to '2 – Okay', '#', data: { action: 'recalls#answer', quality: 2 }, class: 'btn btn-outline-primary mb-3 mr-2' %>
-    <%= link_to '3 – Good', '#', data: { action: 'recalls#answer', quality: 3 }, class: 'btn btn-outline-primary mb-3 mr-2' %>
-    <%= link_to '4 – Excellent', '#', data: { action: 'recalls#answer', quality: 4 }, class: 'btn btn-outline-primary mb-3 mr-2' %>
+    <%= link_to '#', data: { action: 'recalls#answer', quality: 1 }, class: 'btn btn-outline-primary mb-3 mr-2' do %>
+      Bad <small class="ml-1 text-grey">1</small>
+    <% end %>
+    <%= link_to '#', data: { action: 'recalls#answer', quality: 2 }, class: 'btn btn-outline-primary mb-3 mr-2' do %>
+      Okay <small class="ml-1 text-grey">2</small>
+    <% end %>
+    <%= link_to '#', data: { action: 'recalls#answer', quality: 3 }, class: 'btn btn-outline-primary mb-3 mr-2' do %>
+      Good <small class="ml-1 text-grey">3</small>
+    <% end %>
+    <%= link_to '#', data: { action: 'recalls#answer', quality: 4 }, class: 'btn btn-outline-primary mb-3 mr-2' do %>
+      Excellent <small class="ml-1 text-grey">4</small>
+    <% end %>
   </div>
 </div>
