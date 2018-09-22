@@ -19,7 +19,7 @@ export default class extends Controller {
   submit(event) {
     event.preventDefault()
 
-    let currentForm = event.target.parentNode
+    let currentForm = event.target.parentNode.parentNode
     let formContainer = currentForm.parentNode
 
     if (currentForm.checkValidity()) {
