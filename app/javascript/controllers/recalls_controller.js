@@ -35,7 +35,9 @@ export default class extends Controller {
     this.hideResponse()
   }
 
-  showResponse() {
+  showResponse(event) {
+    event.preventDefault()
+
     if (this.answerShown) {
       return
     }
@@ -117,6 +119,7 @@ export default class extends Controller {
           this.load()
         }
       })
+      .catch(error => alert(error))
   }
 
   // Load cards from the server
