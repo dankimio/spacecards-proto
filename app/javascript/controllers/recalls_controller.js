@@ -95,7 +95,10 @@ export default class extends Controller {
       body: formData,
       credentials: 'same-origin',
       method: 'POST',
-      headers: { 'X-CSRF-Token': ApplicationHelper.getMetaValue('csrf-token') }
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-CSRF-Token': ApplicationHelper.getMetaValue('csrf-token')
+      }
     })
       .then(response => response.json())
       .then(json => {
