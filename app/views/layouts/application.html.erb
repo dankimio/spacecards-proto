@@ -15,7 +15,7 @@
     <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
 
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&amp;subset=cyrillic" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
   </head>
@@ -37,27 +37,33 @@
       </div>
     </div>
 
-    <div class="container">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>" role="alert">
-          <span class="block sm:inline"><%= value %></span>
-        </div>
-      <% end %>
+    <% unless current_page?(root_path) %>
+      <div class="container">
+    <% end %>
 
-      <%= yield %>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>" role="alert">
+        <span class="block sm:inline"><%= value %></span>
+      </div>
+    <% end %>
 
-      <footer class="flex justify-between pt-6 pb-8 lg:pt-10 lg:pb-16">
-        <div class="text-grey-dark">
-          Made by <a href="https://dankim.io" target="_blank">@dankimio</a>
-        </div>
+    <%= yield %>
 
-        <div class="text-grey font-mono">
-          <!-- <ul class="list-reset">
-            <li class="inline-block ml-3"><a href="#" class="text-grey">About</a></li>
-            <li class="inline-block ml-3"><a href="#" class="text-grey">Blog</a></li>
-          </ul> -->
-        </div>
-      </footer>
-    </div>
+    <footer class="flex justify-between pt-6 pb-8 lg:pt-10 lg:pb-16">
+      <div class="text-grey-dark">
+        Made by <a href="https://dankim.io" target="_blank">@dankimio</a>
+      </div>
+
+      <div class="text-grey font-mono">
+        <!-- <ul class="list-reset">
+          <li class="inline-block ml-3"><a href="#" class="text-grey">About</a></li>
+          <li class="inline-block ml-3"><a href="#" class="text-grey">Blog</a></li>
+        </ul> -->
+      </div>
+    </footer>
+
+    <% unless current_page?(root_path) %>
+      </div>
+    <% end %>
   </body>
 </html>
