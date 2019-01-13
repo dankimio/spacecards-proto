@@ -62,7 +62,9 @@ form label {
 }
 
 .btn-lg {
-  @apply .py-3 .px-5 .tracking-wide;
+  font-weight: 500;
+
+  @apply .py-3 .px-12 .tracking-normal;
 }
 
 .btn-primary {

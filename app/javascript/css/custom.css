@@ -26,10 +26,6 @@ h4, h5, h6 {
   @apply .mb-2;
 }
 
-.stripe {
-  background: linear-gradient(to right, #7886d7, #5661b3);
-}
-
 /* Browse cards */
 
 .card {
