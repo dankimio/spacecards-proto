@@ -1,7 +1,7 @@
 <%= content_for :title, 'Password recovery' %>
 
 <div class="my-6 md:my-12">
-  <h1 class="heading-1">Password recovery</h1>
+  <h1 class="heading-1 text-center">Password recovery</h1>
 
   <div class="max-w-sm mx-auto">
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>

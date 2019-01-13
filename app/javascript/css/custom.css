@@ -29,10 +29,18 @@ h4, h5, h6 {
 /* Typography */
 
 .heading-1 {
-  @apply .text-center .text-grey-darkest .font-bold .text-4xl .mb-3;
+  @apply .text-grey-darkest .font-bold .text-5xl .mb-3;
 
   @media (min-width: 768px) {
     @apply .mb-6;
+  }
+}
+
+.heading-2 {
+  @apply .text-grey-darkest .font-bold .text-4xl .mb-2;
+
+  @media (min-width: 768px) {
+    @apply .mb-4;
   }
 }
 
