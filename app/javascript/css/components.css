@@ -55,10 +55,14 @@ form label {
 .btn {
   @apply .inline-block .py-2 .px-4 .rounded .no-underline .border .shadow .align-middle;
 
+  transition: var(--transition-base);
+
   &:hover {
     cursor: pointer;
     transition: var(--transition-base);
-    transform: translateY(-1px);
+    transform: translateY(-.15rem);
+
+    @apply .shadow-md;
   }
   &:focus {
     @apply .outline-none .shadow-outline;
