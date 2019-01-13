@@ -11,7 +11,7 @@
 }
 
 form label {
-  @apply .inline-block .text-grey-darker .text-sm .font-semibold .mb-2;
+  @apply .inline-block .text-grey-dark .text-sm .font-medium .mb-3;
 }
 
 .form-control {
@@ -62,9 +62,7 @@ form label {
 }
 
 .btn-lg {
-  font-weight: 500;
-
-  @apply .py-3 .px-12 .tracking-normal;
+  @apply .py-3 .px-12 .font-medium .tracking-normal;
 }
 
 .btn-primary {

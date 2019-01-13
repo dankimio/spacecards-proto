@@ -1,20 +1,22 @@
 <%= content_for :title, 'Password recovery' %>
 
-<div class="w-full lg:w-1/2 mx-auto">
-  <h1 class="text-grey-darkest font-bold text-4xl mb-5">Password recovery</h1>
+<div class="my-6 md:my-12">
+  <h1 class="heading-1">Password recovery</h1>
 
-  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-    <%#= devise_error_messages! %>
+  <div class="max-w-sm mx-auto">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%#= devise_error_messages! %>
 
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
-    </div>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+      </div>
 
-    <div class="actions mb-6">
-      <%= f.submit 'Reset password', class: 'btn btn-primary btn-lg w-full mt-2' %>
-    </div>
-  <% end %>
+      <div class="actions my-6">
+        <%= f.submit 'Reset password', class: 'btn btn-primary btn-lg w-full' %>
+      </div>
+    <% end %>
 
-  <%= render "users/shared/links" %>
+    <%= render "users/shared/links" %>
+  </div>
 </div>

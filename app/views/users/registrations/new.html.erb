@@ -1,27 +1,30 @@
 <%= content_for :title, 'Sign up' %>
 
-<div class="w-full lg:w-1/2 mx-auto">
-  <h1 class="text-grey-darkest font-bold text-4xl mb-3">Sign up</h1>
+<div class="my-6 md:my-12">
+  <h1 class="heading-1">Sign up for Spacecards</h1>
 
-  <p class="mb-5 text-grey-darker">Create an account to add your own cards and track progress.</p>
+  <p class="text-center text-xl font-light mb-6 md:mb-12 text-grey-darkest">Create an account to add your own cards and track progress.</p>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%#= devise_error_messages! %>
+  <div class="max-w-sm mx-auto">
+    <%= form_for resource, as: resource_name,
+                 url: registration_path(resource_name) do |f| %>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, required: true, placeholder: true, autocomplete: "email", class: 'form-control' %>
+      </div>
 
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true, required: true, placeholder: true, autocomplete: "email", class: 'form-control' %>
-    </div>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password, required: true, placeholder: true, autocomplete: 'new-password', class: 'form-control' %>
+      </div>
 
-    <div class="field">
-      <%= f.label :password %>
-      <%= f.password_field :password, required: true, placeholder: true, autocomplete: 'new-password', class: 'form-control' %>
-    </div>
+      <div class="actions my-8">
+        <%= f.submit 'Start learning', class: 'btn btn-primary btn-lg w-full' %>
+      </div>
+    <% end %>
+  </div>
 
-    <div class="actions mb-6">
-      <%= f.submit 'Start learning', class: 'btn btn-primary btn-lg w-full mt-2' %>
-    </div>
-  <% end %>
-
-  <%= render "users/shared/links" %>
+  <p class="text-center text-grey-dark">
+    Already have an account? <%= link_to "Log in", new_session_path(resource_name) %>
+  </p>
 </div>
