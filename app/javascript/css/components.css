@@ -128,3 +128,9 @@ form label {
     }
   }
 }
+
+/* Pill */
+
+.pill {
+  @apply .inline-block .py-2 .px-4 .rounded-full .bg-indigo-lighter .text-white .text-lg .font-medium;
+}

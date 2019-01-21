@@ -119,7 +119,7 @@ h4, h5, h6 {
 
 #how-to {
   & h3 {
-    @apply .font-extrabold .text-3xl .text-grey-darker .mb-3;
+    @apply .font-medium .text-lg .text-indigo-light uppercase mb-8;
   }
   & .arrow {
      @apply .text-grey-light;
@@ -132,18 +132,6 @@ h4, h5, h6 {
      @media (min-width: 1200px) {
        font-size: 4rem;
      }
-  }
-  & #step-1 {
-    & i {
-      @apply .text-grey .mr-2 .mb-2;
-
-      font-size: 4rem;
-    }
-  }
-  & #step-2 {
-    & .word {
-      @apply .border-b-2 .border-indigo-lighter
-    }
   }
 }
 
