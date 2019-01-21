@@ -127,7 +127,11 @@ h4, h5, h6 {
 
 #how-to {
   & h3 {
-    @apply .font-medium .text-lg .text-indigo-light uppercase mb-8;
+    @apply .font-medium .text-lg .text-indigo-light uppercase mb-6;
+
+    @media (min-width: 992px) {
+      @apply .mb-8;
+    }
   }
   & .arrow {
      @apply .text-grey-light;
