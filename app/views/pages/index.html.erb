@@ -32,15 +32,16 @@
   <div class="container">
     <h2 class="heading-1 text-center">How it works</h2>
 
-    <div class="flex pt-4">
-      <div class="w-2/5">
+    <div class="flex flex-col lg:flex-row pt-4">
+      <div class="lg:w-2/5 mb-6 lg:mb-0">
         <h2 class="heading-2">How it works</h2>
 
         <p class="text-lg text-grey-darkest font-light leading-normal mb-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
 
         <p class="text-lg text-grey-darkest font-light leading-normal mb-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
-      <div class="w-3/5">
+
+      <div class="lg:w-3/5">
         <%= image_tag 'chart.svg', class: 'block lg:ml-auto' %>
       </div>
     </div>
@@ -50,7 +51,7 @@
 <div id="how-to" class="container py-12">
   <h2 class="heading-2 text-center">How to use flashcards</h2>
 
-  <div class="flex flex-col lg:flex-row lg:flex-row justify-between">
+  <div class="flex flex-col lg:flex-row justify-between">
     <div id="step-1" class="mb-8 lg:mb-0 lg:mr-3">
       <h3>1.</h3>
       <div class="flex lg:mb-6">
