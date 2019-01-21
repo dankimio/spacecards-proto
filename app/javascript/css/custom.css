@@ -44,6 +44,14 @@ h4, h5, h6 {
   }
 }
 
+.heading-3 {
+  @apply .text-grey-darkest .font-bold .text-3xl .mb-1;
+
+  @media (min-width: 768px) {
+    @apply .mb-2;
+  }
+}
+
 /* Browse cards */
 
 .card {
