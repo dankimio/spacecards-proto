@@ -32,3 +32,13 @@
     grid-row-gap: 4rem;
   }
 }
+
+#articles {
+  & .article {
+    transition: .25s;
+
+    &:hover {
+      transition: .25s;
+    }
+  }
+}
