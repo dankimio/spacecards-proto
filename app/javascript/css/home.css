@@ -42,3 +42,17 @@
     }
   }
 }
+
+#faq {
+  & .faq-item {
+    @apply .border-t .py-4 .flex .justify-between .items-center .text-grey-darkest;
+
+    &:hover {
+      @apply .text-indigo-dark;
+    }
+
+    &:last-child {
+      @apply .border-b;
+    }
+  }
+}
