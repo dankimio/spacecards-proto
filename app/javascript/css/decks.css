@@ -1,0 +1,14 @@
+#decks {
+  & .deck {
+    @apply .flex .justify-between .mb-5 .py-5 .px-5 .bg-grey-lightest .rounded;
+
+    transition: var(--transition-base);
+
+    &:hover {
+      @apply .shadow-lg;
+
+      transform: translateY(-.15rem);
+      transition: var(--transition-base);
+    }
+  }
+}

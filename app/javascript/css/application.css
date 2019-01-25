@@ -64,4 +64,5 @@
 @import "./components";
 @import "./custom";
 
+@import "./decks";
 @import "./home";

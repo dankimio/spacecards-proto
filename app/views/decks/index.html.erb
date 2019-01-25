@@ -1,9 +1,11 @@
 <%= content_for :title, 'Decks' %>
 
-<h1 class="text-grey-darkest">
+<h1 class="heading-2 text-center" style="margin-bottom: 2rem;">
   Decks
 
   <small><%= link_to 'New deck', new_deck_path, class: 'text-base ml-1' %></small>
 </h1>
 
-<%= render @decks %>
+<div id="decks" class="max-w-md mx-auto">
+  <%= render @decks %>
+</div>
