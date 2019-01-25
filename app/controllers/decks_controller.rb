@@ -24,7 +24,7 @@ class DecksController < ApplicationController
 
   def update
     if @deck.update(deck_params)
-      redirect_to @deck, notice: 'Deck was updated successfully'
+      redirect_to decks_path, notice: 'Deck was updated successfully'
     else
       render :edit
     end
