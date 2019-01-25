@@ -49,10 +49,22 @@
 
     &:hover {
       @apply .text-indigo-dark;
+
+      & .faq-item-button {
+        @apply .text-black;
+      }
     }
 
     &:last-child {
       @apply .border-b;
+    }
+  }
+
+  & .faq-item-button {
+    transition: var(--transition-base);
+
+    &:hover {
+      transition: var(--transition-base);
     }
   }
 }
