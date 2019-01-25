@@ -37,21 +37,17 @@
       </div>
     </div>
 
-    <% unless current_page?(root_path) %>
-      <div class="container">
-    <% end %>
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>" role="alert">
+          <span class="block sm:inline"><%= value %></span>
+        </div>
+      <% end %>
+    </div>
 
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>" role="alert">
-        <span class="block sm:inline"><%= value %></span>
-      </div>
-    <% end %>
-
-    <%= yield %>
-
-    <% unless current_page?(root_path) %>
-      </div>
-    <% end %>
+    <div class="<%= current_page?(root_path) ? '' : 'container' %>">
+      <%= yield %>
+    </div>
 
     <footer class="container flex justify-between pt-6 pb-8 lg:pt-10 lg:pb-16">
       <div class="text-grey-dark">
