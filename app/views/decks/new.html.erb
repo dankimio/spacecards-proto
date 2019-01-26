@@ -2,10 +2,12 @@
   New deck
 </h1>
 
-<%= form_with model: @deck, local: true, class: 'max-w-sm mx-auto' do |f| %>
+<%= form_with model: @deck, local: true, class: 'md:max-w-sm md:mx-auto' do |f| %>
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name, required: true, placeholder: true, class: 'form-control' %>
+    <%= f.text_field :name,
+                     autofocus: true, required: true, placeholder: true,
+                     class: 'form-control' %>
   </div>
 
   <%= f.submit class: 'btn btn-primary btn-lg w-full' %>

@@ -2,15 +2,15 @@
   <%= @deck.name %> <span class="font-light mx-2">→</span> Edit
 </h1>
 
-<%= form_with model: @deck, local: true, class: 'w-64' do |f| %>
-  <h2>Deck</h2>
+<%= form_with model: @deck, local: true, class: 'md:max-w-sm md:mx-auto' do |f| %>
+  <h2 class="font-medium">Deck</h2>
 
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name, required: true, placeholder: true, class: 'form-control' %>
   </div>
 
-  <h2 class="mt-6">Review</h2>
+  <h2 class="font-medium mt-6">Review</h2>
 
   <div class="field">
     <%= f.label :reviews_per_day %>
@@ -19,7 +19,7 @@
 
   <%= f.submit 'Save', class: 'btn btn-primary' %>
 
-  <h2 class="mt-6">Danger zone</h2>
+  <h2 class="font-medium mt-6">Danger zone</h2>
 
   <%= link_to deck_path(@deck), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
     <i class="material-icons mr-1" style="font-size:.925rem">delete</i>

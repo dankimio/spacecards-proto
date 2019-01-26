@@ -15,7 +15,7 @@ a {
 }
 
 h1, h2, h3 {
-  @apply .mb-4 .font-semibold;
+  @apply .mb-4 .font-semibold .text-grey-darkest;
 
   & small {
     @apply .font-normal;
@@ -23,13 +23,13 @@ h1, h2, h3 {
 }
 
 h4, h5, h6 {
-  @apply .mb-2;
+  @apply .mb-2 .text-grey-darkest;
 }
 
 /* Typography */
 
 .heading-1 {
-  @apply .text-grey-darkest .font-bold .text-5xl .mb-3;
+  @apply .font-bold .text-5xl .mb-3;
 
   @media (min-width: 768px) {
     @apply .mb-6;
@@ -37,7 +37,7 @@ h4, h5, h6 {
 }
 
 .heading-2 {
-  @apply .text-grey-darkest .font-bold .text-4xl .mb-2;
+  @apply .font-bold .text-4xl .mb-2;
 
   @media (min-width: 768px) {
     @apply .mb-4;
@@ -45,7 +45,7 @@ h4, h5, h6 {
 }
 
 .heading-3 {
-  @apply .text-grey-darkest .font-bold .text-3xl .mb-1;
+  @apply .font-bold .text-3xl .mb-1;
 
   @media (min-width: 768px) {
     @apply .mb-2;
