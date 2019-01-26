@@ -4,50 +4,69 @@
   <%= @deck.name %> <span class="font-light mx-2">→</span> Study
 </h1>
 
-<div id="recall" data-controller="recalls" data-recalls-get-url="<%= new_deck_recall_path(@deck) %>" data-recalls-post-url="<%= recalls_path %>">
-  <div class="bg-grey-lightest rounded lg:w-2/3 xl:w-1/2 mb-5" data-target="recalls.card">
-    <div class="recall-front" data-target="recalls.front">
-    </div>
-    <div class="recall-back" data-target="recalls.back">
-    </div>
-  </div>
-
-  <div class="stats bg-grey-lightest rounded lg:w-2/3 xl:w-1/2 mb-5 p-5 flex-col" data-target="recalls.stats">
-    <i class="material-icons stats-icon text-grey-dark mb-2 self-center">check_circle</i>
-
-    <h3 class="self-center mb-8">You are all done!</h3>
-
-    <div class="flex">
-      <div class="w-1/2 bg-grey-lighter p-4 rounded mr-2">
-        <p class="text-grey-darker mb-2">Cards studied</p>
-
-        <p class="text-xl font-bold text-indigo" data-target="recalls.cardsCount">0</p>
+<div class="md:max-w-md md:mx-auto">
+  <div id="recall"
+       data-controller="recalls"
+       data-recalls-get-url="<%= new_deck_recall_path(@deck) %>"
+       data-recalls-post-url="<%= recalls_path %>">
+    <div class="bg-grey-lightest rounded mb-8"
+         data-target="recalls.card">
+      <div class="recall-front" data-target="recalls.front">
       </div>
-
-      <div class="w-1/2 bg-grey-lighter p-4 rounded ml-2">
-        <p class="text-grey-darker mb-2">Deck progress</p>
-
-        <p class="text-xl font-bold text-indigo" data-target="recalls.deckProgress">0%</p>
+      <div class="recall-back" data-target="recalls.back">
       </div>
     </div>
-  </div>
 
-  <a href="#" class="btn btn-outline-primary" data-target="recalls.showBackButton" data-action="recalls#showBack">
-    Show answer <small class="ml-1 text-grey">↵</small>
-  </a>
+    <div class="stats bg-grey-lightest rounded mb-5 p-5 flex-col" data-target="recalls.stats">
+      <i class="material-icons stats-icon text-grey-dark mb-2 self-center">check_circle</i>
 
-  <div class="hidden" id="response-buttons" data-target="recalls.responseButtons">
-    <%= link_to '#', data: { action: 'recalls#answer', quality: 1 }, class: 'btn btn-outline-primary mb-3 mr-2' do %>
-      Bad <small class="ml-1 text-grey">1</small>
-    <% end %>
-    <%= link_to '#', data: { action: 'recalls#answer', quality: 2 }, class: 'btn btn-outline-primary mb-3 mr-2' do %>
-      Okay <small class="ml-1 text-grey">2</small>
-    <% end %>
-    <%= link_to '#', data: { action: 'recalls#answer', quality: 3 }, class: 'btn btn-outline-primary mb-3 mr-2' do %>
-      Good <small class="ml-1 text-grey">3</small>
-    <% end %>
-    <%= link_to '#', data: { action: 'recalls#answer', quality: 4 }, class: 'btn btn-outline-primary mb-3 mr-2' do %>
-      Excellent <small class="ml-1 text-grey">4</small>
-    <% end %>
+      <h3 class="self-center mb-8">You are all done!</h3>
+
+      <div class="flex">
+        <div class="w-1/2 bg-grey-lighter p-4 rounded mr-2">
+          <p class="text-grey-darker mb-2">Cards studied</p>
+
+          <p class="text-xl font-bold text-indigo" data-target="recalls.cardsCount">0</p>
+        </div>
+
+        <div class="w-1/2 bg-grey-lighter p-4 rounded ml-2">
+          <p class="text-grey-darker mb-2">Deck progress</p>
+
+          <p class="text-xl font-bold text-indigo" data-target="recalls.deckProgress">0%</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="#" class="btn btn-primary btn-lg w-full"
+       data-target="recalls.showBackButton"
+       data-action="recalls#showBack">
+      Show answer <small class="ml-1 text-grey">↵</small>
+    </a>
+
+    <div class="hidden" id="response-buttons" data-target="recalls.responseButtons">
+      <%= link_to '#',
+                  data: { action: 'recalls#answer', quality: 1 },
+                  class: 'flex-1 btn btn-lg btn-outline-primary mb-3 md:mb-0 md:mr-2' do %>
+        Bad <small class="ml-1 text-grey">1</small>
+      <% end %>
+
+      <%= link_to '#',
+                  data: { action: 'recalls#answer', quality: 2 },
+                  class: 'flex-1 btn btn-lg btn-outline-primary mb-3 md:mb-0 md:mr-2' do %>
+        Okay <small class="ml-1 text-grey">2</small>
+      <% end %>
+
+      <%= link_to '#',
+                  data: { action: 'recalls#answer', quality: 3 },
+                  class: 'flex-1 btn btn-lg btn-outline-primary mb-3 md:mb-0 md:mr-2' do %>
+        Good <small class="ml-1 text-grey">3</small>
+      <% end %>
+
+      <%= link_to '#',
+                  data: { action: 'recalls#answer', quality: 4 },
+                  class: 'flex-1 btn btn-lg btn-outline-primary mb-3 md:mb-0 md:mr-2' do %>
+        Excellent <small class="ml-1 text-grey">4</small>
+      <% end %>
+    </div>
   </div>
 </div>

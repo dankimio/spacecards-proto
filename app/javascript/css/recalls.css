@@ -1,0 +1,48 @@
+/* Recalls */
+
+.recall-front, .recall-back {
+  @apply .text-center .text-xl .break-words .leading-normal .text-grey-darkest;
+}
+
+.recall-front {
+  @apply .px-8 py-12
+}
+
+.recall-back {
+  &.active {
+    @apply .border-t .border-t-2 .border-grey-lighter .px-8 py-12 .mx-6;
+  }
+}
+
+.stats {
+  @apply .flex .absolute;
+
+  transform: scale(0);
+  transition: transform .5s cubic-bezier(.5, 0, .3, 1);
+
+  & .stats-icon {
+    font-size: 5rem;
+  }
+
+  &.active {
+    @apply .static;
+
+    transform: scale(1);
+  }
+}
+
+#response-buttons {
+  @apply .flex .flex-col;
+
+  @media (min-width: 768px) {
+    @apply .flex-row .justify-between;
+  }
+
+  & .btn {
+    display: block;
+
+    @media (min-width: 576px) {
+      display: inline-block;
+    }
+  }
+}

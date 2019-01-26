@@ -51,7 +51,7 @@ export default class extends Controller {
     this.cardTarget.classList.add('animated', 'flipInX', 'faster')
 
     this.showBackButtonTarget.style.display = 'none'
-    this.responseButtonsTarget.style.display = 'block'
+    this.responseButtonsTarget.style.display = 'flex'
   }
 
   hideBack() {

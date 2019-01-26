@@ -74,7 +74,7 @@ form label {
 }
 
 .btn-lg {
-  @apply .py-3 .px-12 .font-medium .tracking-normal;
+  @apply .py-3 .px-6 .font-medium .tracking-normal .text-center;
 }
 
 .btn-primary {
@@ -86,10 +86,10 @@ form label {
 }
 
 .btn-outline-primary {
-  @apply .bg-white .border-indigo .text-indigo;
+  @apply .bg-white .border-grey-light .border-2 .text-indigo;
 
   &:hover {
-    @apply .bg-indigo .text-white;
+    @apply .bg-indigo .border-indigo .text-white;
   }
 }
 
