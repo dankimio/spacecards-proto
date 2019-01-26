@@ -17,9 +17,11 @@
     <%= f.number_field :reviews_per_day, min: 0, placeholder: true, class: 'form-control' %>
   </div>
 
-  <%= f.submit 'Save', class: 'btn btn-primary' %>
+  <div class="my-8">
+    <%= f.submit 'Save', class: 'btn btn-primary btn-lg w-full' %>
+  </div>
 
-  <h2 class="font-medium mt-8">Danger zone</h2>
+  <h2 class="font-medium">Danger zone</h2>
 
   <%= link_to deck_path(@deck), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do %>
     <i class="material-icons mr-1" style="font-size:.925rem">delete</i>
