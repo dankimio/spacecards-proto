@@ -39,7 +39,11 @@ form label {
 /* Alerts */
 
 .alert {
-  @apply .mb-5 .border .px-4 .py-3 .rounded .relative;
+  @apply .mb-6 .border .px-4 .py-3 .rounded .relative;
+
+  @media(min-width: 768px) {
+    @apply .mb-8;
+  }
 }
 
 .alert-notice {
