@@ -43,9 +43,15 @@
   }
 }
 
-#faq {
-  & .faq-item {
-    @apply .border-t .py-4 .flex .justify-between .items-center .text-grey-darkest;
+.faq-item {
+  @apply .border-t;
+
+  &:last-child {
+    @apply .border-b;
+  }
+
+  & .faq-item-heading {
+    @apply .py-4 .flex .justify-between .items-center .text-grey-darkest;
 
     &:hover {
       @apply .text-indigo-dark;
@@ -54,10 +60,6 @@
         @apply .text-black;
       }
     }
-
-    &:last-child {
-      @apply .border-b;
-    }
   }
 
   & .faq-item-button {
@@ -65,6 +67,14 @@
 
     &:hover {
       transition: var(--transition-base);
+    }
+  }
+
+  & .faq-item-content {
+    @apply .hidden .overflow-hidden .mb-4 .mr-4 .text-grey-darker;
+
+    &.active {
+      @apply .block;
     }
   }
 }
