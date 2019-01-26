@@ -3,7 +3,7 @@
 }
 
 .field {
-  @apply .mb-4;
+  @apply .mb-5;
 
   & small {
     @apply .block .mt-2 .text-grey-dark;
@@ -11,7 +11,7 @@
 }
 
 form label {
-  @apply .inline-block .text-grey-dark .text-sm .font-medium .mb-3;
+  @apply .inline-block .text-grey-dark .text-sm .font-medium .mb-2;
 }
 
 .form-control {
