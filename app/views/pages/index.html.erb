@@ -15,7 +15,7 @@
     <p class="text-sm text-grey-darkest flex items-center">
       <span class="mx-2">Sign in with</span>
 
-      <%= link_to '#', class: 'mx-3' do %>
+      <%= link_to user_twitter_omniauth_authorize_path, class: 'mx-3' do %>
         <%= image_tag 'icon-twitter.svg' %>
       <% end %>
 
