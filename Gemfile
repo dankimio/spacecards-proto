@@ -23,7 +23,6 @@ gem 'turbolinks', '~> 5'
 # Auth
 gem 'devise', '~> 4.4'
 gem 'omniauth-google-oauth2', '~> 0.6'
-gem 'omniauth-twitter', '~> 1.4'
 
 # Spaced repetition algorithm
 gem 'repetition', '~> 2.0'
