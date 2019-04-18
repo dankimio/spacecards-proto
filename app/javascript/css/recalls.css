@@ -32,7 +32,7 @@
 }
 
 #response-buttons {
-  @apply .flex .flex-col;
+  @apply .hidden .flex-col;
 
   @media (min-width: 768px) {
     @apply .flex-row .justify-between;
