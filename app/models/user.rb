@@ -3,9 +3,18 @@ class User < ApplicationRecord
   has_many :cards, through: :decks
 
   # Others available are: :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
+         :omniauthable, :trackable, :validatable,
+         omniauth_providers: %i[google_oauth2]
 
   after_create_commit :add_sample_data
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+    end
+  end
 
   private
 
