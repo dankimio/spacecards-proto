@@ -31,7 +31,7 @@ class DecksControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update deck' do
     patch deck_url(@deck), params: { deck: { name: @deck.name } }
-    assert_redirected_to deck_url(@deck)
+    assert_redirected_to decks_url
   end
 
   test 'should destroy deck' do
