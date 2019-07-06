@@ -44,34 +44,18 @@
 }
 
 .faq-item {
-  @apply .border-t;
+  @apply .border-t .py-6;
 
   &:last-child {
     @apply .border-b;
   }
 
   & .faq-item-heading {
-    @apply .py-4 .flex .justify-between .items-center .text-grey-darkest;
-
-    &:hover {
-      @apply .text-indigo-dark;
-
-      & .faq-item-button {
-        @apply .text-black;
-      }
-    }
-  }
-
-  & .faq-item-button {
-    transition: var(--transition-base);
-
-    &:hover {
-      transition: var(--transition-base);
-    }
+    @apply .mb-4 .flex .justify-between .items-center .text-grey-darkest .font-medium .text-lg;
   }
 
   & .faq-item-content {
-    @apply .hidden .overflow-hidden .mb-4 .mr-4 .text-grey-darker;
+    @apply .text-grey-darker .leading-normal;
 
     &.active {
       @apply .block;
