@@ -28,7 +28,7 @@ gem 'omniauth-google-oauth2', '~> 0.6'
 gem 'repetition', '~> 2.0'
 
 gem 'kramdown', '~> 1.17'
-gem 'activerecord-import', '~> 0.25'
+gem 'activerecord-import', '~> 1.4'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
