@@ -3,7 +3,7 @@ module ApplicationHelper
     base_title = 'Spacecards'
 
     if page_title.present?
-      page_title + ' | ' + base_title
+      "#{page_title} | #{base_title}"
     else
       base_title
     end

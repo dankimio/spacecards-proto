@@ -19,8 +19,7 @@ class DecksController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @deck.update(deck_params)

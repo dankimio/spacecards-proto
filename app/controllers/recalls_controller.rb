@@ -2,8 +2,7 @@ class RecallsController < ApplicationController
   before_action :set_deck, only: %i[index new]
   before_action :set_card, only: %i[create]
 
-  def index
-  end
+  def index; end
 
   def new
     @cards = @deck.cards.for_review

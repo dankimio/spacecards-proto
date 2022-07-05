@@ -9,7 +9,7 @@ class Deck < ApplicationRecord
       reviews_per_day = deck.reviews_per_day || REVIEWS_PER_DAY
       cards_limit = reviews_per_day - recalled_today.count
 
-      due.limit(cards_limit < 0 ? 0 : cards_limit)
+      due.limit(cards_limit.negative? ? 0 : cards_limit)
     end
   end
 
