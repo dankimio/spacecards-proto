@@ -1,5 +1,7 @@
 # Spacecards
 
+![Screenshot](./screenshot.png)
+
 Flashcards with spaced repetition.
 
 - Ruby version: see `.ruby-version`
