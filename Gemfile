@@ -27,7 +27,7 @@ gem 'omniauth-google-oauth2', '~> 0.6'
 # Spaced repetition algorithm
 gem 'repetition', '~> 2.0'
 
-gem 'kramdown', '~> 1.17'
+gem 'kramdown', '~> 2.0'
 gem 'activerecord-import', '~> 1.4'
 
 # Reduces boot times through caching; required in config/boot.rb

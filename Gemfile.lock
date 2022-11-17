@@ -110,7 +110,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jwt (2.5.0)
-    kramdown (1.17.0)
+    kramdown (2.4.0)
+      rexml
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -264,7 +265,7 @@ DEPENDENCIES
   chromedriver-helper
   devise (~> 4.4)
   jbuilder (~> 2.5)
-  kramdown (~> 1.17)
+  kramdown (~> 2.0)
   listen (>= 3.0.5, < 3.2)
   omniauth-google-oauth2 (~> 0.6)
   pg (~> 1.0)
